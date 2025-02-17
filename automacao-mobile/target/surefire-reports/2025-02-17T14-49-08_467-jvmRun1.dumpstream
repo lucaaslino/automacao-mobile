@@ -1,0 +1,990 @@
+# Created at 2025-02-17T14:49:54.308
+TestSet has not finished before stream error has appeared >> initializing exit by non-null configuration: DEFAULT
+java.io.EOFException
+	at java.base/java.io.DataInputStream.readFully(DataInputStream.java:210)
+	at java.base/java.io.DataInputStream.readInt(DataInputStream.java:385)
+	at org.apache.maven.surefire.booter.MasterProcessCommand.decode(MasterProcessCommand.java:115)
+	at org.apache.maven.surefire.booter.CommandReader$CommandRunnable.run(CommandReader.java:391)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+
+# Created at 2025-02-17T14:50:02.576
+Unexpected IOException with stream:       [31morg.openqa.selenium.remote.UnreachableBrowserException: Error communicating with the remote browser. It may have died.
+Build info: version: '4.14.1', revision: '03f8ede370'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.6'
+Driver info: io.appium.java_client.android.AndroidDriver
+Command: [a4a2d602-3d90-4494-b8a6-a9171cf88781, get [url]]
+Capabilities {appium:autoGrantPermissions: true, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.android.chrome/com.goog..., appPackage: com.android.chrome, autoGrantPermissions: true, automationName: UiAutomator2, browserName: Chrome, deviceName: emulator-5554, headless: true, noSign: true, platformName: ANDROID, platformVersion: 14, resetKeyboard: true, unicodeKeyboard: true}, appium:deviceApiLevel: 34, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 480, appium:deviceScreenSize: 1344x2992, appium:deviceUDID: emulator-5554, appium:headless: true, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noSign: true, appium:pixelRatio: 3, appium:platformVersion: 14, appium:resetKeyboard: true, appium:statBarHeight: 151, appium:takesScreenshot: true, appium:unicodeKeyboard: true, appium:viewportRect: {height: 2841, left: 0, top: 151, width: 1344}, appium:warnings: {}, appium:webStorageEnabled: false, browserName: Chrome, platformName: ANDROID}
+Session ID: a4a2d602-3d90-4494-b8a6-a9171cf88781
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:629)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:304)
+	at steps.Hooks.setUp(Hooks.java:23)
+Caused by: java.io.UncheckedIOException: java.io.IOException: HTTP/1.1 header parser received no bytes
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:443)
+	at io.appium.java_client.internal.filters.AppiumIdempotencyFilter.lambda$apply$0(AppiumIdempotencyFilter.java:35)
+	at io.appium.java_client.internal.filters.AppiumUserAgentFilter.lambda$apply$0(AppiumUserAgentFilter.java:87)
+	at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:55)
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute(JdkHttpClient.java:359)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:188)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:238)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:304)
+	at steps.Hooks.setUp(Hooks.java:23)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at io.cucumber.java.Invoker.doInvoke(Invoker.java:66)
+	at io.cucumber.java.Invoker.invoke(Invoker.java:24)
+	at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)
+	at io.cucumber.java.JavaHookDefinition.execute(JavaHookDefinition.java:64)
+	at io.cucumber.core.runner.CoreHookDefinition.execute(CoreHookDefinition.java:46)
+	at io.cucumber.core.runner.HookDefinitionMatch.runStep(HookDefinitionMatch.java:21)
+	at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
+	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:84)
+	at io.cucumber.core.runner.TestStep.run(TestStep.java:56)
+	at io.cucumber.core.runner.TestCase.run(TestCase.java:78)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:75)
+	at io.cucumber.junit.PickleRunners$NoStepDescriptions.lambda$run$0(PickleRunners.java:151)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:130)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:130)
+	at io.cucumber.junit.PickleRunners$NoStepDescriptions.run(PickleRunners.java:148)
+	at io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:144)
+	at io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:28)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at io.cucumber.junit.FeatureRunner.run(FeatureRunner.java:137)
+	at io.cucumber.junit.Cucumber.runChild(Cucumber.java:196)
+	at io.cucumber.junit.Cucumber.runChild(Cucumber.java:89)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at io.cucumber.junit.Cucumber$RunBeforeAllHooks.evaluate(Cucumber.java:266)
+	at io.cucumber.junit.Cucumber$RunAfterAllHooks.evaluate(Cucumber.java:281)
+	at io.cucumber.junit.Cucumber$StartTestRun.evaluate(Cucumber.java:233)
+	at io.cucumber.junit.Cucumber$FinishTestRun.evaluate(Cucumber.java:248)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+Caused by: java.io.IOException: HTTP/1.1 header parser received no bytes
+	at java.net.http/jdk.internal.net.http.common.Utils.wrapWithExtraDetail(Utils.java:388)
+	at java.net.http/jdk.internal.net.http.Http1Response$HeadersReader.onReadError(Http1Response.java:590)
+	at java.net.http/jdk.internal.net.http.Http1AsyncReceiver.checkForErrors(Http1AsyncReceiver.java:302)
+	at java.net.http/jdk.internal.net.http.Http1AsyncReceiver.flush(Http1AsyncReceiver.java:268)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler$LockingRestartableTask.run(SequentialScheduler.java:182)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler$CompleteRestartableTask.run(SequentialScheduler.java:149)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler$SchedulableTask.run(SequentialScheduler.java:207)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:401)
+	at java.base/sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:434)
+	at java.net.http/jdk.internal.net.http.SocketTube.readAvailable(SocketTube.java:1178)
+	at java.net.http/jdk.internal.net.http.SocketTube$InternalReadPublisher$InternalReadSubscription.read(SocketTube.java:841)
+	at java.net.http/jdk.internal.net.http.SocketTube$SocketFlowTask.run(SocketTube.java:181)
+	at java.net.http/jdk.internal.net.http.common.SequentialSc
+
+# Created at 2025-02-17T14:50:02.577
+Unexpected IOException with stream: heduler$SchedulableTask.run(SequentialScheduler.java:207)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler.runOrSchedule(SequentialScheduler.java:280)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler.runOrSchedule(SequentialScheduler.java:233)
+	at java.net.http/jdk.internal.net.http.SocketTube$InternalReadPublisher$InternalReadSubscription.signalReadable(SocketTube.java:782)
+	at java.net.http/jdk.internal.net.http.SocketTube$InternalReadPublisher$ReadEvent.signalEvent(SocketTube.java:965)
+	at java.net.http/jdk.internal.net.http.SocketTube$SocketFlowEvent.handle(SocketTube.java:253)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl$SelectorManager.handleEvent(HttpClientImpl.java:1469)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl$SelectorManager.lambda$run$3(HttpClientImpl.java:1414)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl$SelectorManager.run(HttpClientImpl.java:1414)
+[0m
+
+
+# Created at 2025-02-17T14:50:02.583
+Unexpected IOException with stream:   [36mDado [0m[36mque realizo o login[0m                            [90m# steps.RealizarLoginStep.realizar_login()[0m
+
+
+# Created at 2025-02-17T14:50:02.584
+Unexpected IOException with stream:   [36mEntão [0m[36mverifico se o login foi realizado com sucesso[0m [90m# steps.RealizarLoginStep.verificar_login_sucesso()[0m
+
+
+# Created at 2025-02-17T14:50:02.586
+Unexpected IOException with stream: O cenário 'Realizar Login com Sucesso' - FALHOU!
+
+
+# Created at 2025-02-17T14:50:02.594
+Unexpected IOException with stream:       [31morg.openqa.selenium.remote.UnreachableBrowserException: Error communicating with the remote browser. It may have died.
+Build info: version: '4.14.1', revision: '03f8ede370'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.6'
+Driver info: io.appium.java_client.android.AndroidDriver
+Command: [a4a2d602-3d90-4494-b8a6-a9171cf88781, screenshot []]
+Capabilities {appium:autoGrantPermissions: true, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.android.chrome/com.goog..., appPackage: com.android.chrome, autoGrantPermissions: true, automationName: UiAutomator2, browserName: Chrome, deviceName: emulator-5554, headless: true, noSign: true, platformName: ANDROID, platformVersion: 14, resetKeyboard: true, unicodeKeyboard: true}, appium:deviceApiLevel: 34, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 480, appium:deviceScreenSize: 1344x2992, appium:deviceUDID: emulator-5554, appium:headless: true, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noSign: true, appium:pixelRatio: 3, appium:platformVersion: 14, appium:resetKeyboard: true, appium:statBarHeight: 151, appium:takesScreenshot: true, appium:unicodeKeyboard: true, appium:viewportRect: {height: 2841, left: 0, top: 151, width: 1344}, appium:warnings: {}, appium:webStorageEnabled: false, browserName: Chrome, platformName: ANDROID}
+Session ID: a4a2d602-3d90-4494-b8a6-a9171cf88781
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:629)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:675)
+	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:307)
+	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:325)
+	at io.appium.java_client.AppiumDriver.getScreenshotAs(AppiumDriver.java:316)
+	at steps.Hooks.saveScreenshot(Hooks.java:48)
+	at steps.Hooks.tearDown(Hooks.java:34)
+Caused by: java.io.UncheckedIOException: java.net.ConnectException
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:443)
+	at io.appium.java_client.internal.filters.AppiumIdempotencyFilter.lambda$apply$0(AppiumIdempotencyFilter.java:35)
+	at io.appium.java_client.internal.filters.AppiumUserAgentFilter.lambda$apply$0(AppiumUserAgentFilter.java:87)
+	at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:55)
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute(JdkHttpClient.java:359)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:188)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:238)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:675)
+	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:307)
+	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:325)
+	at io.appium.java_client.AppiumDriver.getScreenshotAs(AppiumDriver.java:316)
+	at steps.Hooks.saveScreenshot(Hooks.java:48)
+	at steps.Hooks.tearDown(Hooks.java:34)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at io.cucumber.java.Invoker.doInvoke(Invoker.java:66)
+	at io.cucumber.java.Invoker.invoke(Invoker.java:24)
+	at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)
+	at io.cucumber.java.JavaHookDefinition.execute(JavaHookDefinition.java:64)
+	at io.cucumber.core.runner.CoreHookDefinition.execute(CoreHookDefinition.java:46)
+	at io.cucumber.core.runner.HookDefinitionMatch.runStep(HookDefinitionMatch.java:21)
+	at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
+	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:84)
+	at io.cucumber.core.runner.TestStep.run(TestStep.java:56)
+	at io.cucumber.core.runner.TestCase.run(TestCase.java:90)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:75)
+	at io.cucumber.junit.PickleRunners$NoStepDescriptions.lambda$run$0(PickleRunners.java:151)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:130)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:130)
+	at io.cucumber.junit.PickleRunners$NoStepDescriptions.run(PickleRunners.java:148)
+	at io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:144)
+	at io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:28)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at io.cucumber.junit.FeatureRunner.run(FeatureRunner.java:137)
+	at io.cucumber.junit.Cucumber.runChild(Cucumber.java:196)
+	at io.cucumber.junit.Cucumber.runChild(Cucumber.java:89)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at io.cucumber.junit.Cucumber$RunBeforeAllHooks.evaluate(Cucumber.java:266)
+	at io.cucumber.junit.Cucumber$RunAfterAllHooks.evaluate(Cucumber.java:281)
+	at io.cucumber.junit.Cucumber$StartTestRun.evaluate(Cucumber.java:233)
+	at io.cucumber.junit.Cucumber$FinishTestRun.evaluate(Cucumber.java:248)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+Caused by: java.net.ConnectException
+	at java.net.http/jdk.internal.net.http.common.Utils.toConnectException(Utils.java:1041)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:227)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.checkRetryConnect(PlainHttpConnection.java:280)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$2(PlainHttpConnection.java:238)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934)
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1773)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.nio.channels.C
+
+# Created at 2025-02-17T14:50:02.595
+Unexpected IOException with stream: losedChannelException
+	at java.base/sun.nio.ch.SocketChannelImpl.ensureOpen(SocketChannelImpl.java:202)
+	at java.base/sun.nio.ch.SocketChannelImpl.beginConnect(SocketChannelImpl.java:786)
+	at java.base/sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:874)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$1(PlainHttpConnection.java:210)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:571)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:212)
+	... 9 more
+[0m
+
+
+# Created at 2025-02-17T14:50:02.604
+Unexpected IOException: 7,1,Realizar Compras de Produto #1,Realizar Login com Sucesso(Realizar Compras de Produto #1),null,Error communicating with the remote browser. It may have died.\000ABuild info: version: '4.14.1'\002C revision: '03f8ede370'\000ASystem info: os.name: 'Windows 11'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '21.0.6'\000ADriver info: io.appium.java_client.android.AndroidDriver\000ACommand: [a4a2d602-3d90-4494-b8a6-a9171cf88781\002C get [url]]\000ACapabilities {appium:autoGrantPermissions: true\002C appium:automationName: UiAutomator2\002C appium:databaseEnabled: false\002C appium:desired: {appActivity: com.android.chrome/com.goog...\002C appPackage: com.android.chrome\002C autoGrantPermissions: true\002C automationName: UiAutomator2\002C browserName: Chrome\002C deviceName: emulator-5554\002C headless: true\002C noSign: true\002C platformName: ANDROID\002C platformVersion: 14\002C resetKeyboard: true\002C unicodeKeyboard: true}\002C appium:deviceApiLevel: 34\002C appium:deviceManufacturer: Google\002C appium:deviceModel: sdk_gphone64_x86_64\002C appium:deviceName: emulator-5554\002C appium:deviceScreenDensity: 480\002C appium:deviceScreenSize: 1344x2992\002C appium:deviceUDID: emulator-5554\002C appium:headless: true\002C appium:javascriptEnabled: true\002C appium:locationContextEnabled: false\002C appium:networkConnectionEnabled: true\002C appium:noSign: true\002C appium:pixelRatio: 3\002C appium:platformVersion: 14\002C appium:resetKeyboard: true\002C appium:statBarHeight: 151\002C appium:takesScreenshot: true\002C appium:unicodeKeyboard: true\002C appium:viewportRect: {height: 2841\002C left: 0\002C top: 151\002C width: 1344}\002C appium:warnings: {}\002C appium:webStorageEnabled: false\002C browserName: Chrome\002C platformName: ANDROID}\000ASession ID: a4a2d602-3d90-4494-b8a6-a9171cf88781,null,Error communicating with the remote browser. It may have died.\000ABuild info: version: '4.14.1'\002C revision: '03f8ede370'\000ASystem info: os.name: 'Windows 11'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '21.0.6'\000ADriver info: io.appium.java_client.android.AndroidDriver\000ACommand: [a4a2d602-3d90-4494-b8a6-a9171cf88781\002C get [url]]\000ACapabilities {appium:autoGrantPermissions: true\002C appium:automationName: UiAutomator2\002C appium:databaseEnabled: false\002C appium:desired: {appActivity: com.android.chrome/com.goog...\002C appPackage: com.android.chrome\002C autoGrantPermissions: true\002C automationName: UiAutomator2\002C browserName: Chrome\002C deviceName: emulator-5554\002C headless: true\002C noSign: true\002C platformName: ANDROID\002C platformVersion: 14\002C resetKeyboard: true\002C unicodeKeyboard: true}\002C appium:deviceApiLevel: 34\002C appium:deviceManufacturer: Google\002C appium:deviceModel: sdk_gphone64_x86_64\002C appium:deviceName: emulator-5554\002C appium:deviceScreenDensity: 480\002C appium:deviceScreenSize: 1344x2992\002C appium:deviceUDID: emulator-5554\002C appium:headless: true\002C appium:javascriptEnabled: true\002C appium:locationContextEnabled: false\002C appium:networkConnectionEnabled: true\002C appium:noSign: true\002C appium:pixelRatio: 3\002C appium:platformVersion: 14\002C appium:resetKeyboard: true\002C appium:statBarHeight: 151\002C appium:takesScreenshot: true\002C appium:unicodeKeyboard: true\002C appium:viewportRect: {height: 2841\002C left: 0\002C top: 151\002C width: 1344}\002C appium:warnings: {}\002C appium:webStorageEnabled: false\002C browserName: Chrome\002C platformName: ANDROID}\000ASession ID: a4a2d602-3d90-4494-b8a6-a9171cf88781,Error communicating with the remote browser. It may have died.\000ABuild info: version: '4.14.1'\002C revision: '03f8ede370'\000ASystem info: os.name: 'Windows 11'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '21.0.6'\000ADriver info: io.appium.java_client.android.AndroidDriver\000ACommand: [a4a2d602-3d90-4494-b8a6-a9171cf88781\002C get [url]]\000ACapabilities {appium:autoGrantPermissions: true\002C appium:automationName: UiAutomator2\002C appium:databaseEnabled: false\002C appium:desired: {appActivity: com.android.chrome/com.goog...\002C appPackage: com.android.chrome\002C autoGrantPermissions: true\002C automationName: UiAutomator2\002C browserName: Chrome\002C deviceName: emulator-5554\002C headless: true\002C noSign: true\002C platformName: ANDROID\002C platformVersion: 14\002C resetKeyboard: true\002C unicodeKeyboard: true}\002C appium:deviceApiLevel: 34\002C appium:deviceManufacturer: Google\002C appium:deviceModel: sdk_gphone64_x86_64\002C appium:deviceName: emulator-5554\002C appium:deviceScreenDensity: 480\002C appium:deviceScreenSize: 1344x2992\002C appium:deviceUDID: emulator-5554\002C appium:headless: true\002C appium:javascriptEnabled: true\002C appium:locationContextEnabled: false\002C appium:networkConnectionEnabled: true\002C appium:noSign: true\002C appium:pixelRatio: 3\002C appium:platformVersion: 14\002C appium:resetKeyboard: true\002C appium:statBarHeight: 151\002C appium:takesScreenshot: true\002C appium:unicodeKeyboard: true\002C appium:viewportRect: {height: 2841\002C left: 0\002C top: 151\002C width: 1344}\002C appium:warnings: {}\002C appium:webStorageEnabled: false\002C browserName: Chrome\002C platformName: ANDROID}\000ASession ID: a4a2d602-3d90-4494-b8a6-a9171cf88781,org.openqa.selenium.remote.UnreachableBrowserException: \000AError communicating with the remote browser. It may have died.\000ABuild info: version: '4.14.1'\002C revision: '03f8ede370'\000ASystem info: os.name: 'Windows 11'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '21.0.6'\000ADriver info: io.appium.java_client.android.AndroidDriver\000ACommand: [a4a2d602-3d90-4494-b8a6-a9171cf88781\002C get [url]]\000ACapabilities {appium:autoGrantPermissions: true\002C appium:automationName: UiAutomator2\002C appium:databaseEnabled: false\002C appium:desired: {appActivity: com.android.chrome/com.goog...\002C appPackage: com.android.chrome\002C autoGrantPermissions: true\002C automationName: UiAutomator2\002C browserName: Chrome\002C deviceName: emulator-5554\002C headless: true\002C noSign: true\002C platformName: ANDROID\002C platformVersion: 14\002C resetKeyboard: true\002C unicodeKeyboard: true}\002C appium:deviceApiLevel: 34\002C appium:deviceManufacturer: Google\002C appium:deviceModel: sdk_gphone64_x86_64\002C appium:deviceName: emulator-5554\002C appium:deviceScreenDensity: 480\002C appium:deviceScreenSize: 1344x2992\002C appium:deviceUDID: emulator-5554\002C appium:headless: true\002C appium:javascriptEnabled: true\002C appium:locationContextEnabled: false\002C appium:networkConnectionEnabled: true\002C appium:noSign: true\002C appium:pixelRatio: 3\002C appium:platformVersion: 14\002C appium:resetKeyboard: true\002C appium:statBarHeight: 151\002C appium:takesScreenshot: true\002C appium:unicodeKeyboard: true\002C appium:viewportRect: {height: 2841\002C left: 0\002C top: 151\002C width: 1344}\002C appium:warnings: {}\002C appium:webStorageEnabled: false\002C browserName: Chrome\002C platformName: ANDROID}\000ASession ID: a4a2d602-3d90-4494-b8a6-a9171cf88781\000ACaused by: java.io.UncheckedIOException: java.io.IOException: HTTP/1.1 header parser received no bytes\000ACaused by: java.io.IOException: HTTP/1.1 header parser received no bytes\000ACaused by: java.net.SocketException: Connection reset\000A
+
+
+# Created at 2025-02-17T14:50:02.605
+Unexpected IOException: 7,1,Realizar Compras de Produto #1,Realizar Login com Sucesso(Realizar Compras de Produto #1),null,Error communicating with the remote browser. It may have died.\000ABuild info: version: '4.14.1'\002C revision: '03f8ede370'\000ASystem info: os.name: 'Windows 11'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '21.0.6'\000ADriver info: io.appium.java_client.android.AndroidDriver\000ACommand: [a4a2d602-3d90-4494-b8a6-a9171cf88781\002C screenshot []]\000ACapabilities {appium:autoGrantPermissions: true\002C appium:automationName: UiAutomator2\002C appium:databaseEnabled: false\002C appium:desired: {appActivity: com.android.chrome/com.goog...\002C appPackage: com.android.chrome\002C autoGrantPermissions: true\002C automationName: UiAutomator2\002C browserName: Chrome\002C deviceName: emulator-5554\002C headless: true\002C noSign: true\002C platformName: ANDROID\002C platformVersion: 14\002C resetKeyboard: true\002C unicodeKeyboard: true}\002C appium:deviceApiLevel: 34\002C appium:deviceManufacturer: Google\002C appium:deviceModel: sdk_gphone64_x86_64\002C appium:deviceName: emulator-5554\002C appium:deviceScreenDensity: 480\002C appium:deviceScreenSize: 1344x2992\002C appium:deviceUDID: emulator-5554\002C appium:headless: true\002C appium:javascriptEnabled: true\002C appium:locationContextEnabled: false\002C appium:networkConnectionEnabled: true\002C appium:noSign: true\002C appium:pixelRatio: 3\002C appium:platformVersion: 14\002C appium:resetKeyboard: true\002C appium:statBarHeight: 151\002C appium:takesScreenshot: true\002C appium:unicodeKeyboard: true\002C appium:viewportRect: {height: 2841\002C left: 0\002C top: 151\002C width: 1344}\002C appium:warnings: {}\002C appium:webStorageEnabled: false\002C browserName: Chrome\002C platformName: ANDROID}\000ASession ID: a4a2d602-3d90-4494-b8a6-a9171cf88781,null,Error communicating with the remote browser. It may have died.\000ABuild info: version: '4.14.1'\002C revision: '03f8ede370'\000ASystem info: os.name: 'Windows 11'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '21.0.6'\000ADriver info: io.appium.java_client.android.AndroidDriver\000ACommand: [a4a2d602-3d90-4494-b8a6-a9171cf88781\002C screenshot []]\000ACapabilities {appium:autoGrantPermissions: true\002C appium:automationName: UiAutomator2\002C appium:databaseEnabled: false\002C appium:desired: {appActivity: com.android.chrome/com.goog...\002C appPackage: com.android.chrome\002C autoGrantPermissions: true\002C automationName: UiAutomator2\002C browserName: Chrome\002C deviceName: emulator-5554\002C headless: true\002C noSign: true\002C platformName: ANDROID\002C platformVersion: 14\002C resetKeyboard: true\002C unicodeKeyboard: true}\002C appium:deviceApiLevel: 34\002C appium:deviceManufacturer: Google\002C appium:deviceModel: sdk_gphone64_x86_64\002C appium:deviceName: emulator-5554\002C appium:deviceScreenDensity: 480\002C appium:deviceScreenSize: 1344x2992\002C appium:deviceUDID: emulator-5554\002C appium:headless: true\002C appium:javascriptEnabled: true\002C appium:locationContextEnabled: false\002C appium:networkConnectionEnabled: true\002C appium:noSign: true\002C appium:pixelRatio: 3\002C appium:platformVersion: 14\002C appium:resetKeyboard: true\002C appium:statBarHeight: 151\002C appium:takesScreenshot: true\002C appium:unicodeKeyboard: true\002C appium:viewportRect: {height: 2841\002C left: 0\002C top: 151\002C width: 1344}\002C appium:warnings: {}\002C appium:webStorageEnabled: false\002C browserName: Chrome\002C platformName: ANDROID}\000ASession ID: a4a2d602-3d90-4494-b8a6-a9171cf88781,Error communicating with the remote browser. It may have died.\000ABuild info: version: '4.14.1'\002C revision: '03f8ede370'\000ASystem info: os.name: 'Windows 11'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '21.0.6'\000ADriver info: io.appium.java_client.android.AndroidDriver\000ACommand: [a4a2d602-3d90-4494-b8a6-a9171cf88781\002C screenshot []]\000ACapabilities {appium:autoGrantPermissions: true\002C appium:automationName: UiAutomator2\002C appium:databaseEnabled: false\002C appium:desired: {appActivity: com.android.chrome/com.goog...\002C appPackage: com.android.chrome\002C autoGrantPermissions: true\002C automationName: UiAutomator2\002C browserName: Chrome\002C deviceName: emulator-5554\002C headless: true\002C noSign: true\002C platformName: ANDROID\002C platformVersion: 14\002C resetKeyboard: true\002C unicodeKeyboard: true}\002C appium:deviceApiLevel: 34\002C appium:deviceManufacturer: Google\002C appium:deviceModel: sdk_gphone64_x86_64\002C appium:deviceName: emulator-5554\002C appium:deviceScreenDensity: 480\002C appium:deviceScreenSize: 1344x2992\002C appium:deviceUDID: emulator-5554\002C appium:headless: true\002C appium:javascriptEnabled: true\002C appium:locationContextEnabled: false\002C appium:networkConnectionEnabled: true\002C appium:noSign: true\002C appium:pixelRatio: 3\002C appium:platformVersion: 14\002C appium:resetKeyboard: true\002C appium:statBarHeight: 151\002C appium:takesScreenshot: true\002C appium:unicodeKeyboard: true\002C appium:viewportRect: {height: 2841\002C left: 0\002C top: 151\002C width: 1344}\002C appium:warnings: {}\002C appium:webStorageEnabled: false\002C browserName: Chrome\002C platformName: ANDROID}\000ASession ID: a4a2d602-3d90-4494-b8a6-a9171cf88781,org.openqa.selenium.remote.UnreachableBrowserException: \000AError communicating with the remote browser. It may have died.\000ABuild info: version: '4.14.1'\002C revision: '03f8ede370'\000ASystem info: os.name: 'Windows 11'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '21.0.6'\000ADriver info: io.appium.java_client.android.AndroidDriver\000ACommand: [a4a2d602-3d90-4494-b8a6-a9171cf88781\002C screenshot []]\000ACapabilities {appium:autoGrantPermissions: true\002C appium:automationName: UiAutomator2\002C appium:databaseEnabled: false\002C appium:desired: {appActivity: com.android.chrome/com.goog...\002C appPackage: com.android.chrome\002C autoGrantPermissions: true\002C automationName: UiAutomator2\002C browserName: Chrome\002C deviceName: emulator-5554\002C headless: true\002C noSign: true\002C platformName: ANDROID\002C platformVersion: 14\002C resetKeyboard: true\002C unicodeKeyboard: true}\002C appium:deviceApiLevel: 34\002C appium:deviceManufacturer: Google\002C appium:deviceModel: sdk_gphone64_x86_64\002C appium:deviceName: emulator-5554\002C appium:deviceScreenDensity: 480\002C appium:deviceScreenSize: 1344x2992\002C appium:deviceUDID: emulator-5554\002C appium:headless: true\002C appium:javascriptEnabled: true\002C appium:locationContextEnabled: false\002C appium:networkConnectionEnabled: true\002C appium:noSign: true\002C appium:pixelRatio: 3\002C appium:platformVersion: 14\002C appium:resetKeyboard: true\002C appium:statBarHeight: 151\002C appium:takesScreenshot: true\002C appium:unicodeKeyboard: true\002C appium:viewportRect: {height: 2841\002C left: 0\002C top: 151\002C width: 1344}\002C appium:warnings: {}\002C appium:webStorageEnabled: false\002C browserName: Chrome\002C platformName: ANDROID}\000ASession ID: a4a2d602-3d90-4494-b8a6-a9171cf88781\000ACaused by: java.io.UncheckedIOException: java.net.ConnectException\000ACaused by: java.net.ConnectException\000ACaused by: java.nio.channels.ClosedChannelException\000A
+
+
+# Created at 2025-02-17T14:50:02.610
+Unexpected IOException: 5,1,Realizar Compras de Produto #1,Realizar Logout com Sucesso(Realizar Compras de Produto #1),null,null,null
+
+
+# Created at 2025-02-17T14:50:02.616
+Unexpected IOException with stream: 
+@Suite_Comprar_produtos @Realizar_logout
+Cenario: Realizar Logout com Sucesso                   [90m# src/test/java/resources/features/001_RealizarLoginSpec.feature:19[0m
+
+
+# Created at 2025-02-17T14:50:02.627
+Unexpected IOException with stream:       [31morg.openqa.selenium.remote.UnreachableBrowserException: Error communicating with the remote browser. It may have died.
+Build info: version: '4.14.1', revision: '03f8ede370'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.6'
+Driver info: io.appium.java_client.android.AndroidDriver
+Command: [a4a2d602-3d90-4494-b8a6-a9171cf88781, get [url]]
+Capabilities {appium:autoGrantPermissions: true, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.android.chrome/com.goog..., appPackage: com.android.chrome, autoGrantPermissions: true, automationName: UiAutomator2, browserName: Chrome, deviceName: emulator-5554, headless: true, noSign: true, platformName: ANDROID, platformVersion: 14, resetKeyboard: true, unicodeKeyboard: true}, appium:deviceApiLevel: 34, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 480, appium:deviceScreenSize: 1344x2992, appium:deviceUDID: emulator-5554, appium:headless: true, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noSign: true, appium:pixelRatio: 3, appium:platformVersion: 14, appium:resetKeyboard: true, appium:statBarHeight: 151, appium:takesScreenshot: true, appium:unicodeKeyboard: true, appium:viewportRect: {height: 2841, left: 0, top: 151, width: 1344}, appium:warnings: {}, appium:webStorageEnabled: false, browserName: Chrome, platformName: ANDROID}
+Session ID: a4a2d602-3d90-4494-b8a6-a9171cf88781
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:629)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:304)
+	at steps.Hooks.setUp(Hooks.java:23)
+Caused by: java.io.UncheckedIOException: java.net.ConnectException
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:443)
+	at io.appium.java_client.internal.filters.AppiumIdempotencyFilter.lambda$apply$0(AppiumIdempotencyFilter.java:35)
+	at io.appium.java_client.internal.filters.AppiumUserAgentFilter.lambda$apply$0(AppiumUserAgentFilter.java:87)
+	at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:55)
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute(JdkHttpClient.java:359)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:188)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:238)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:304)
+	at steps.Hooks.setUp(Hooks.java:23)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at io.cucumber.java.Invoker.doInvoke(Invoker.java:66)
+	at io.cucumber.java.Invoker.invoke(Invoker.java:24)
+	at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)
+	at io.cucumber.java.JavaHookDefinition.execute(JavaHookDefinition.java:64)
+	at io.cucumber.core.runner.CoreHookDefinition.execute(CoreHookDefinition.java:46)
+	at io.cucumber.core.runner.HookDefinitionMatch.runStep(HookDefinitionMatch.java:21)
+	at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
+	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:84)
+	at io.cucumber.core.runner.TestStep.run(TestStep.java:56)
+	at io.cucumber.core.runner.TestCase.run(TestCase.java:78)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:75)
+	at io.cucumber.junit.PickleRunners$NoStepDescriptions.lambda$run$0(PickleRunners.java:151)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:130)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:130)
+	at io.cucumber.junit.PickleRunners$NoStepDescriptions.run(PickleRunners.java:148)
+	at io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:144)
+	at io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:28)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at io.cucumber.junit.FeatureRunner.run(FeatureRunner.java:137)
+	at io.cucumber.junit.Cucumber.runChild(Cucumber.java:196)
+	at io.cucumber.junit.Cucumber.runChild(Cucumber.java:89)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at io.cucumber.junit.Cucumber$RunBeforeAllHooks.evaluate(Cucumber.java:266)
+	at io.cucumber.junit.Cucumber$RunAfterAllHooks.evaluate(Cucumber.java:281)
+	at io.cucumber.junit.Cucumber$StartTestRun.evaluate(Cucumber.java:233)
+	at io.cucumber.junit.Cucumber$FinishTestRun.evaluate(Cucumber.java:248)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+Caused by: java.net.ConnectException
+	at java.net.http/jdk.internal.net.http.common.Utils.toConnectException(Utils.java:1041)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:227)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.checkRetryConnect(PlainHttpConnection.java:280)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$2(PlainHttpConnection.java:238)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934)
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1773)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.nio.channels.ClosedChannelException
+	at java.base/sun.nio.ch.SocketChannelImpl.ensureOpen(SocketChannelImpl.java:202)
+	at java.base/sun.nio.ch.SocketChannelImpl.beginConnect(SocketChannelImpl.java:786)
+	at java.base/sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:874)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$1(PlainHttpConnection.java:210)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:571)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:212)
+	... 9 more
+[0m
+
+# Created at 2025-02-17T14:50:02.628
+Unexpected IOException with stream: 
+
+
+# Created at 2025-02-17T14:50:02.631
+Unexpected IOException with stream:   [36mDado [0m[36mque realizo o login[0m                             [90m# steps.RealizarLoginStep.realizar_login()[0m
+
+
+# Created at 2025-02-17T14:50:02.632
+Unexpected IOException with stream:   [36mE [0m[36mverifico se o login foi realizado com sucesso[0m      [90m# steps.RealizarLoginStep.verificar_login_sucesso()[0m
+
+
+# Created at 2025-02-17T14:50:02.633
+Unexpected IOException with stream:   [36mE [0m[36mrealizo o logout[0m                                   [90m# steps.RealizarLoginStep.realizar_logout()[0m
+
+
+# Created at 2025-02-17T14:50:02.634
+Unexpected IOException with stream:   [36mEntão [0m[36mverifico se o logout foi realizado com sucesso[0m [90m# steps.RealizarLoginStep.verificar_logout_sucesso()[0m
+
+
+# Created at 2025-02-17T14:50:02.635
+Unexpected IOException with stream: O cenário 'Realizar Logout com Sucesso' - FALHOU!
+
+
+# Created at 2025-02-17T14:50:02.652
+Unexpected IOException with stream:       [31morg.openqa.selenium.remote.UnreachableBrowserException: Error communicating with the remote browser. It may have died.
+Build info: version: '4.14.1', revision: '03f8ede370'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.6'
+Driver info: io.appium.java_client.android.AndroidDriver
+Command: [a4a2d602-3d90-4494-b8a6-a9171cf88781, screenshot []]
+Capabilities {appium:autoGrantPermissions: true, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.android.chrome/com.goog..., appPackage: com.android.chrome, autoGrantPermissions: true, automationName: UiAutomator2, browserName: Chrome, deviceName: emulator-5554, headless: true, noSign: true, platformName: ANDROID, platformVersion: 14, resetKeyboard: true, unicodeKeyboard: true}, appium:deviceApiLevel: 34, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 480, appium:deviceScreenSize: 1344x2992, appium:deviceUDID: emulator-5554, appium:headless: true, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noSign: true, appium:pixelRatio: 3, appium:platformVersion: 14, appium:resetKeyboard: true, appium:statBarHeight: 151, appium:takesScreenshot: true, appium:unicodeKeyboard: true, appium:viewportRect: {height: 2841, left: 0, top: 151, width: 1344}, appium:warnings: {}, appium:webStorageEnabled: false, browserName: Chrome, platformName: ANDROID}
+Session ID: a4a2d602-3d90-4494-b8a6-a9171cf88781
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:629)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:675)
+	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:307)
+	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:325)
+	at io.appium.java_client.AppiumDriver.getScreenshotAs(AppiumDriver.java:316)
+	at steps.Hooks.saveScreenshot(Hooks.java:48)
+	at steps.Hooks.tearDown(Hooks.java:34)
+Caused by: java.io.UncheckedIOException: java.net.ConnectException
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:443)
+	at io.appium.java_client.internal.filters.AppiumIdempotencyFilter.lambda$apply$0(AppiumIdempotencyFilter.java:35)
+	at io.appium.java_client.internal.filters.AppiumUserAgentFilter.lambda$apply$0(AppiumUserAgentFilter.java:87)
+	at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:55)
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute(JdkHttpClient.java:359)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:188)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:238)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:675)
+	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:307)
+	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:325)
+	at io.appium.java_client.AppiumDriver.getScreenshotAs(AppiumDriver.java:316)
+	at steps.Hooks.saveScreenshot(Hooks.java:48)
+	at steps.Hooks.tearDown(Hooks.java:34)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at io.cucumber.java.Invoker.doInvoke(Invoker.java:66)
+	at io.cucumber.java.Invoker.invoke(Invoker.java:24)
+	at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)
+	at io.cucumber.java.JavaHookDefinition.execute(JavaHookDefinition.java:64)
+	at io.cucumber.core.runner.CoreHookDefinition.execute(CoreHookDefinition.java:46)
+	at io.cucumber.core.runner.HookDefinitionMatch.runStep(HookDefinitionMatch.java:21)
+	at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
+	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:84)
+	at io.cucumber.core.runner.TestStep.run(TestStep.java:56)
+	at io.cucumber.core.runner.TestCase.run(TestCase.java:90)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:75)
+	at io.cucumber.junit.PickleRunners$NoStepDescriptions.lambda$run$0(PickleRunners.java:151)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:130)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:130)
+	at io.cucumber.junit.PickleRunners$NoStepDescriptions.run(PickleRunners.java:148)
+	at io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:144)
+	at io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:28)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at io.cucumber.junit.FeatureRunner.run(FeatureRunner.java:137)
+	at io.cucumber.junit.Cucumber.runChild(Cucumber.java:196)
+	at io.cucumber.junit.Cucumber.runChild(Cucumber.java:89)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at io.cucumber.junit.Cucumber$RunBeforeAllHooks.evaluate(Cucumber.java:266)
+	at io.cucumber.junit.Cucumber$RunAfterAllHooks.evaluate(Cucumber.java:281)
+	at io.cucumber.junit.Cucumber$StartTestRun.evaluate(Cucumber.java:233)
+	at io.cucumber.junit.Cucumber$FinishTestRun.evaluate(Cucumber.java:248)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+Caused by: java.net.ConnectException
+	at java.net.http/jdk.internal.net.http.common.Utils.toConnectException(Utils.java:1041)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:227)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.checkRetryConnect(PlainHttpConnection.java:280)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$2(PlainHttpConnection.java:238)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934)
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1773)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.nio.channels.C
+
+# Created at 2025-02-17T14:50:02.653
+Unexpected IOException with stream: losedChannelException
+	at java.base/sun.nio.ch.SocketChannelImpl.ensureOpen(SocketChannelImpl.java:202)
+	at java.base/sun.nio.ch.SocketChannelImpl.beginConnect(SocketChannelImpl.java:786)
+	at java.base/sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:874)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$1(PlainHttpConnection.java:210)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:571)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:212)
+	... 9 more
+[0m
+
+
+# Created at 2025-02-17T14:50:02.656
+Unexpected IOException: 7,1,Realizar Compras de Produto #1,Realizar Logout com Sucesso(Realizar Compras de Produto #1),null,Error communicating with the remote browser. It may have died.\000ABuild info: version: '4.14.1'\002C revision: '03f8ede370'\000ASystem info: os.name: 'Windows 11'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '21.0.6'\000ADriver info: io.appium.java_client.android.AndroidDriver\000ACommand: [a4a2d602-3d90-4494-b8a6-a9171cf88781\002C get [url]]\000ACapabilities {appium:autoGrantPermissions: true\002C appium:automationName: UiAutomator2\002C appium:databaseEnabled: false\002C appium:desired: {appActivity: com.android.chrome/com.goog...\002C appPackage: com.android.chrome\002C autoGrantPermissions: true\002C automationName: UiAutomator2\002C browserName: Chrome\002C deviceName: emulator-5554\002C headless: true\002C noSign: true\002C platformName: ANDROID\002C platformVersion: 14\002C resetKeyboard: true\002C unicodeKeyboard: true}\002C appium:deviceApiLevel: 34\002C appium:deviceManufacturer: Google\002C appium:deviceModel: sdk_gphone64_x86_64\002C appium:deviceName: emulator-5554\002C appium:deviceScreenDensity: 480\002C appium:deviceScreenSize: 1344x2992\002C appium:deviceUDID: emulator-5554\002C appium:headless: true\002C appium:javascriptEnabled: true\002C appium:locationContextEnabled: false\002C appium:networkConnectionEnabled: true\002C appium:noSign: true\002C appium:pixelRatio: 3\002C appium:platformVersion: 14\002C appium:resetKeyboard: true\002C appium:statBarHeight: 151\002C appium:takesScreenshot: true\002C appium:unicodeKeyboard: true\002C appium:viewportRect: {height: 2841\002C left: 0\002C top: 151\002C width: 1344}\002C appium:warnings: {}\002C appium:webStorageEnabled: false\002C browserName: Chrome\002C platformName: ANDROID}\000ASession ID: a4a2d602-3d90-4494-b8a6-a9171cf88781,null,Error communicating with the remote browser. It may have died.\000ABuild info: version: '4.14.1'\002C revision: '03f8ede370'\000ASystem info: os.name: 'Windows 11'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '21.0.6'\000ADriver info: io.appium.java_client.android.AndroidDriver\000ACommand: [a4a2d602-3d90-4494-b8a6-a9171cf88781\002C get [url]]\000ACapabilities {appium:autoGrantPermissions: true\002C appium:automationName: UiAutomator2\002C appium:databaseEnabled: false\002C appium:desired: {appActivity: com.android.chrome/com.goog...\002C appPackage: com.android.chrome\002C autoGrantPermissions: true\002C automationName: UiAutomator2\002C browserName: Chrome\002C deviceName: emulator-5554\002C headless: true\002C noSign: true\002C platformName: ANDROID\002C platformVersion: 14\002C resetKeyboard: true\002C unicodeKeyboard: true}\002C appium:deviceApiLevel: 34\002C appium:deviceManufacturer: Google\002C appium:deviceModel: sdk_gphone64_x86_64\002C appium:deviceName: emulator-5554\002C appium:deviceScreenDensity: 480\002C appium:deviceScreenSize: 1344x2992\002C appium:deviceUDID: emulator-5554\002C appium:headless: true\002C appium:javascriptEnabled: true\002C appium:locationContextEnabled: false\002C appium:networkConnectionEnabled: true\002C appium:noSign: true\002C appium:pixelRatio: 3\002C appium:platformVersion: 14\002C appium:resetKeyboard: true\002C appium:statBarHeight: 151\002C appium:takesScreenshot: true\002C appium:unicodeKeyboard: true\002C appium:viewportRect: {height: 2841\002C left: 0\002C top: 151\002C width: 1344}\002C appium:warnings: {}\002C appium:webStorageEnabled: false\002C browserName: Chrome\002C platformName: ANDROID}\000ASession ID: a4a2d602-3d90-4494-b8a6-a9171cf88781,Error communicating with the remote browser. It may have died.\000ABuild info: version: '4.14.1'\002C revision: '03f8ede370'\000ASystem info: os.name: 'Windows 11'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '21.0.6'\000ADriver info: io.appium.java_client.android.AndroidDriver\000ACommand: [a4a2d602-3d90-4494-b8a6-a9171cf88781\002C get [url]]\000ACapabilities {appium:autoGrantPermissions: true\002C appium:automationName: UiAutomator2\002C appium:databaseEnabled: false\002C appium:desired: {appActivity: com.android.chrome/com.goog...\002C appPackage: com.android.chrome\002C autoGrantPermissions: true\002C automationName: UiAutomator2\002C browserName: Chrome\002C deviceName: emulator-5554\002C headless: true\002C noSign: true\002C platformName: ANDROID\002C platformVersion: 14\002C resetKeyboard: true\002C unicodeKeyboard: true}\002C appium:deviceApiLevel: 34\002C appium:deviceManufacturer: Google\002C appium:deviceModel: sdk_gphone64_x86_64\002C appium:deviceName: emulator-5554\002C appium:deviceScreenDensity: 480\002C appium:deviceScreenSize: 1344x2992\002C appium:deviceUDID: emulator-5554\002C appium:headless: true\002C appium:javascriptEnabled: true\002C appium:locationContextEnabled: false\002C appium:networkConnectionEnabled: true\002C appium:noSign: true\002C appium:pixelRatio: 3\002C appium:platformVersion: 14\002C appium:resetKeyboard: true\002C appium:statBarHeight: 151\002C appium:takesScreenshot: true\002C appium:unicodeKeyboard: true\002C appium:viewportRect: {height: 2841\002C left: 0\002C top: 151\002C width: 1344}\002C appium:warnings: {}\002C appium:webStorageEnabled: false\002C browserName: Chrome\002C platformName: ANDROID}\000ASession ID: a4a2d602-3d90-4494-b8a6-a9171cf88781,org.openqa.selenium.remote.UnreachableBrowserException: \000AError communicating with the remote browser. It may have died.\000ABuild info: version: '4.14.1'\002C revision: '03f8ede370'\000ASystem info: os.name: 'Windows 11'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '21.0.6'\000ADriver info: io.appium.java_client.android.AndroidDriver\000ACommand: [a4a2d602-3d90-4494-b8a6-a9171cf88781\002C get [url]]\000ACapabilities {appium:autoGrantPermissions: true\002C appium:automationName: UiAutomator2\002C appium:databaseEnabled: false\002C appium:desired: {appActivity: com.android.chrome/com.goog...\002C appPackage: com.android.chrome\002C autoGrantPermissions: true\002C automationName: UiAutomator2\002C browserName: Chrome\002C deviceName: emulator-5554\002C headless: true\002C noSign: true\002C platformName: ANDROID\002C platformVersion: 14\002C resetKeyboard: true\002C unicodeKeyboard: true}\002C appium:deviceApiLevel: 34\002C appium:deviceManufacturer: Google\002C appium:deviceModel: sdk_gphone64_x86_64\002C appium:deviceName: emulator-5554\002C appium:deviceScreenDensity: 480\002C appium:deviceScreenSize: 1344x2992\002C appium:deviceUDID: emulator-5554\002C appium:headless: true\002C appium:javascriptEnabled: true\002C appium:locationContextEnabled: false\002C appium:networkConnectionEnabled: true\002C appium:noSign: true\002C appium:pixelRatio: 3\002C appium:platformVersion: 14\002C appium:resetKeyboard: true\002C appium:statBarHeight: 151\002C appium:takesScreenshot: true\002C appium:unicodeKeyboard: true\002C appium:viewportRect: {height: 2841\002C left: 0\002C top: 151\002C width: 1344}\002C appium:warnings: {}\002C appium:webStorageEnabled: false\002C browserName: Chrome\002C platformName: ANDROID}\000ASession ID: a4a2d602-3d90-4494-b8a6-a9171cf88781\000ACaused by: java.io.UncheckedIOException: java.net.ConnectException\000ACaused by: java.net.ConnectException\000ACaused by: java.nio.channels.ClosedChannelException\000A
+
+
+# Created at 2025-02-17T14:50:02.658
+Unexpected IOException: 7,1,Realizar Compras de Produto #1,Realizar Logout com Sucesso(Realizar Compras de Produto #1),null,Error communicating with the remote browser. It may have died.\000ABuild info: version: '4.14.1'\002C revision: '03f8ede370'\000ASystem info: os.name: 'Windows 11'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '21.0.6'\000ADriver info: io.appium.java_client.android.AndroidDriver\000ACommand: [a4a2d602-3d90-4494-b8a6-a9171cf88781\002C screenshot []]\000ACapabilities {appium:autoGrantPermissions: true\002C appium:automationName: UiAutomator2\002C appium:databaseEnabled: false\002C appium:desired: {appActivity: com.android.chrome/com.goog...\002C appPackage: com.android.chrome\002C autoGrantPermissions: true\002C automationName: UiAutomator2\002C browserName: Chrome\002C deviceName: emulator-5554\002C headless: true\002C noSign: true\002C platformName: ANDROID\002C platformVersion: 14\002C resetKeyboard: true\002C unicodeKeyboard: true}\002C appium:deviceApiLevel: 34\002C appium:deviceManufacturer: Google\002C appium:deviceModel: sdk_gphone64_x86_64\002C appium:deviceName: emulator-5554\002C appium:deviceScreenDensity: 480\002C appium:deviceScreenSize: 1344x2992\002C appium:deviceUDID: emulator-5554\002C appium:headless: true\002C appium:javascriptEnabled: true\002C appium:locationContextEnabled: false\002C appium:networkConnectionEnabled: true\002C appium:noSign: true\002C appium:pixelRatio: 3\002C appium:platformVersion: 14\002C appium:resetKeyboard: true\002C appium:statBarHeight: 151\002C appium:takesScreenshot: true\002C appium:unicodeKeyboard: true\002C appium:viewportRect: {height: 2841\002C left: 0\002C top: 151\002C width: 1344}\002C appium:warnings: {}\002C appium:webStorageEnabled: false\002C browserName: Chrome\002C platformName: ANDROID}\000ASession ID: a4a2d602-3d90-4494-b8a6-a9171cf88781,null,Error communicating with the remote browser. It may have died.\000ABuild info: version: '4.14.1'\002C revision: '03f8ede370'\000ASystem info: os.name: 'Windows 11'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '21.0.6'\000ADriver info: io.appium.java_client.android.AndroidDriver\000ACommand: [a4a2d602-3d90-4494-b8a6-a9171cf88781\002C screenshot []]\000ACapabilities {appium:autoGrantPermissions: true\002C appium:automationName: UiAutomator2\002C appium:databaseEnabled: false\002C appium:desired: {appActivity: com.android.chrome/com.goog...\002C appPackage: com.android.chrome\002C autoGrantPermissions: true\002C automationName: UiAutomator2\002C browserName: Chrome\002C deviceName: emulator-5554\002C headless: true\002C noSign: true\002C platformName: ANDROID\002C platformVersion: 14\002C resetKeyboard: true\002C unicodeKeyboard: true}\002C appium:deviceApiLevel: 34\002C appium:deviceManufacturer: Google\002C appium:deviceModel: sdk_gphone64_x86_64\002C appium:deviceName: emulator-5554\002C appium:deviceScreenDensity: 480\002C appium:deviceScreenSize: 1344x2992\002C appium:deviceUDID: emulator-5554\002C appium:headless: true\002C appium:javascriptEnabled: true\002C appium:locationContextEnabled: false\002C appium:networkConnectionEnabled: true\002C appium:noSign: true\002C appium:pixelRatio: 3\002C appium:platformVersion: 14\002C appium:resetKeyboard: true\002C appium:statBarHeight: 151\002C appium:takesScreenshot: true\002C appium:unicodeKeyboard: true\002C appium:viewportRect: {height: 2841\002C left: 0\002C top: 151\002C width: 1344}\002C appium:warnings: {}\002C appium:webStorageEnabled: false\002C browserName: Chrome\002C platformName: ANDROID}\000ASession ID: a4a2d602-3d90-4494-b8a6-a9171cf88781,Error communicating with the remote browser. It may have died.\000ABuild info: version: '4.14.1'\002C revision: '03f8ede370'\000ASystem info: os.name: 'Windows 11'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '21.0.6'\000ADriver info: io.appium.java_client.android.AndroidDriver\000ACommand: [a4a2d602-3d90-4494-b8a6-a9171cf88781\002C screenshot []]\000ACapabilities {appium:autoGrantPermissions: true\002C appium:automationName: UiAutomator2\002C appium:databaseEnabled: false\002C appium:desired: {appActivity: com.android.chrome/com.goog...\002C appPackage: com.android.chrome\002C autoGrantPermissions: true\002C automationName: UiAutomator2\002C browserName: Chrome\002C deviceName: emulator-5554\002C headless: true\002C noSign: true\002C platformName: ANDROID\002C platformVersion: 14\002C resetKeyboard: true\002C unicodeKeyboard: true}\002C appium:deviceApiLevel: 34\002C appium:deviceManufacturer: Google\002C appium:deviceModel: sdk_gphone64_x86_64\002C appium:deviceName: emulator-5554\002C appium:deviceScreenDensity: 480\002C appium:deviceScreenSize: 1344x2992\002C appium:deviceUDID: emulator-5554\002C appium:headless: true\002C appium:javascriptEnabled: true\002C appium:locationContextEnabled: false\002C appium:networkConnectionEnabled: true\002C appium:noSign: true\002C appium:pixelRatio: 3\002C appium:platformVersion: 14\002C appium:resetKeyboard: true\002C appium:statBarHeight: 151\002C appium:takesScreenshot: true\002C appium:unicodeKeyboard: true\002C appium:viewportRect: {height: 2841\002C left: 0\002C top: 151\002C width: 1344}\002C appium:warnings: {}\002C appium:webStorageEnabled: false\002C browserName: Chrome\002C platformName: ANDROID}\000ASession ID: a4a2d602-3d90-4494-b8a6-a9171cf88781,org.openqa.selenium.remote.UnreachableBrowserException: \000AError communicating with the remote browser. It may have died.\000ABuild info: version: '4.14.1'\002C revision: '03f8ede370'\000ASystem info: os.name: 'Windows 11'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '21.0.6'\000ADriver info: io.appium.java_client.android.AndroidDriver\000ACommand: [a4a2d602-3d90-4494-b8a6-a9171cf88781\002C screenshot []]\000ACapabilities {appium:autoGrantPermissions: true\002C appium:automationName: UiAutomator2\002C appium:databaseEnabled: false\002C appium:desired: {appActivity: com.android.chrome/com.goog...\002C appPackage: com.android.chrome\002C autoGrantPermissions: true\002C automationName: UiAutomator2\002C browserName: Chrome\002C deviceName: emulator-5554\002C headless: true\002C noSign: true\002C platformName: ANDROID\002C platformVersion: 14\002C resetKeyboard: true\002C unicodeKeyboard: true}\002C appium:deviceApiLevel: 34\002C appium:deviceManufacturer: Google\002C appium:deviceModel: sdk_gphone64_x86_64\002C appium:deviceName: emulator-5554\002C appium:deviceScreenDensity: 480\002C appium:deviceScreenSize: 1344x2992\002C appium:deviceUDID: emulator-5554\002C appium:headless: true\002C appium:javascriptEnabled: true\002C appium:locationContextEnabled: false\002C appium:networkConnectionEnabled: true\002C appium:noSign: true\002C appium:pixelRatio: 3\002C appium:platformVersion: 14\002C appium:resetKeyboard: true\002C appium:statBarHeight: 151\002C appium:takesScreenshot: true\002C appium:unicodeKeyboard: true\002C appium:viewportRect: {height: 2841\002C left: 0\002C top: 151\002C width: 1344}\002C appium:warnings: {}\002C appium:webStorageEnabled: false\002C browserName: Chrome\002C platformName: ANDROID}\000ASession ID: a4a2d602-3d90-4494-b8a6-a9171cf88781\000ACaused by: java.io.UncheckedIOException: java.net.ConnectException\000ACaused by: java.net.ConnectException\000ACaused by: java.nio.channels.ClosedChannelException\000A
+
+
+# Created at 2025-02-17T14:50:02.662
+Unexpected IOException: 5,1,Realizar Compras de Produto #1,Tentar Realizar Login com Credenciais Incorretas(Realizar Compras de Produto #1),null,null,null
+
+
+# Created at 2025-02-17T14:50:02.666
+Unexpected IOException with stream: 
+@Suite_Comprar_produtos @Realizar_login_credencial_incorreta
+Cenario: Tentar Realizar Login com Credenciais Incorretas       [90m# src/test/java/resources/features/001_RealizarLoginSpec.feature:26[0m
+
+
+# Created at 2025-02-17T14:50:02.681
+Unexpected IOException with stream:       [31morg.openqa.selenium.remote.UnreachableBrowserException: Error communicating with the remote browser. It may have died.
+Build info: version: '4.14.1', revision: '03f8ede370'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.6'
+Driver info: io.appium.java_client.android.AndroidDriver
+Command: [a4a2d602-3d90-4494-b8a6-a9171cf88781, get [url]]
+Capabilities {appium:autoGrantPermissions: true, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.android.chrome/com.goog..., appPackage: com.android.chrome, autoGrantPermissions: true, automationName: UiAutomator2, browserName: Chrome, deviceName: emulator-5554, headless: true, noSign: true, platformName: ANDROID, platformVersion: 14, resetKeyboard: true, unicodeKeyboard: true}, appium:deviceApiLevel: 34, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 480, appium:deviceScreenSize: 1344x2992, appium:deviceUDID: emulator-5554, appium:headless: true, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noSign: true, appium:pixelRatio: 3, appium:platformVersion: 14, appium:resetKeyboard: true, appium:statBarHeight: 151, appium:takesScreenshot: true, appium:unicodeKeyboard: true, appium:viewportRect: {height: 2841, left: 0, top: 151, width: 1344}, appium:warnings: {}, appium:webStorageEnabled: false, browserName: Chrome, platformName: ANDROID}
+Session ID: a4a2d602-3d90-4494-b8a6-a9171cf88781
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:629)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:304)
+	at steps.Hooks.setUp(Hooks.java:23)
+Caused by: java.io.UncheckedIOException: java.net.ConnectException
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:443)
+	at io.appium.java_client.internal.filters.AppiumIdempotencyFilter.lambda$apply$0(AppiumIdempotencyFilter.java:35)
+	at io.appium.java_client.internal.filters.AppiumUserAgentFilter.lambda$apply$0(AppiumUserAgentFilter.java:87)
+	at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:55)
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute(JdkHttpClient.java:359)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:188)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:238)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:304)
+	at steps.Hooks.setUp(Hooks.java:23)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at io.cucumber.java.Invoker.doInvoke(Invoker.java:66)
+	at io.cucumber.java.Invoker.invoke(Invoker.java:24)
+	at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)
+	at io.cucumber.java.JavaHookDefinition.execute(JavaHookDefinition.java:64)
+	at io.cucumber.core.runner.CoreHookDefinition.execute(CoreHookDefinition.java:46)
+	at io.cucumber.core.runner.HookDefinitionMatch.runStep(HookDefinitionMatch.java:21)
+	at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
+	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:84)
+	at io.cucumber.core.runner.TestStep.run(TestStep.java:56)
+	at io.cucumber.core.runner.TestCase.run(TestCase.java:78)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:75)
+	at io.cucumber.junit.PickleRunners$NoStepDescriptions.lambda$run$0(PickleRunners.java:151)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:130)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:130)
+	at io.cucumber.junit.PickleRunners$NoStepDescriptions.run(PickleRunners.java:148)
+	at io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:144)
+	at io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:28)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at io.cucumber.junit.FeatureRunner.run(FeatureRunner.java:137)
+	at io.cucumber.junit.Cucumber.runChild(Cucumber.java:196)
+	at io.cucumber.junit.Cucumber.runChild(Cucumber.java:89)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at io.cucumber.junit.Cucumber$RunBeforeAllHooks.evaluate(Cucumber.java:266)
+	at io.cucumber.junit.Cucumber$RunAfterAllHooks.evaluate(Cucumber.java:281)
+	at io.cucumber.junit.Cucumber$StartTestRun.evaluate(Cucumber.java:233)
+	at io.cucumber.junit.Cucumber$FinishTestRun.evaluate(Cucumber.java:248)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+Caused by: java.net.ConnectException
+	at java.net.http/jdk.internal.net.http.common.Utils.toConnectException(Utils.java:1041)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:227)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.checkRetryConnect(PlainHttpConnection.java:280)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$2(PlainHttpConnection.java:238)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934)
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1773)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.nio.channels.ClosedChannelException
+	at java.base/sun.nio.ch.SocketChannelImpl.ensureOpen(SocketChannelImpl.java:202)
+	at java.base/sun.nio.ch.SocketChannelImpl.beginConnect(SocketChannelImpl.java:786)
+	at java.base/sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:874)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$1(PlainHttpConnection.java:210)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:571)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:212)
+	... 9 more
+[0m
+
+# Created at 2025-02-17T14:50:02.681
+Unexpected IOException with stream: 
+
+
+# Created at 2025-02-17T14:50:02.683
+Unexpected IOException with stream:   [36mDado [0m[36mque realizo o login com credenciais incorretas[0m           [90m# steps.RealizarLoginStep.realizar_login_incorreto()[0m
+
+
+# Created at 2025-02-17T14:50:02.684
+Unexpected IOException with stream:   [36mEntão [0m[36mverifico a mensagem de alerta de credenciais incorretas[0m [90m# steps.RealizarLoginStep.verificar_login_incorreto()[0m
+
+
+# Created at 2025-02-17T14:50:02.685
+Unexpected IOException with stream: O cenário 'Tentar Realizar Login com Credenciais Incorretas' - FALHOU!
+
+
+# Created at 2025-02-17T14:50:02.691
+Unexpected IOException with stream:       [31morg.openqa.selenium.remote.UnreachableBrowserException: Error communicating with the remote browser. It may have died.
+Build info: version: '4.14.1', revision: '03f8ede370'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.6'
+Driver info: io.appium.java_client.android.AndroidDriver
+Command: [a4a2d602-3d90-4494-b8a6-a9171cf88781, screenshot []]
+Capabilities {appium:autoGrantPermissions: true, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.android.chrome/com.goog..., appPackage: com.android.chrome, autoGrantPermissions: true, automationName: UiAutomator2, browserName: Chrome, deviceName: emulator-5554, headless: true, noSign: true, platformName: ANDROID, platformVersion: 14, resetKeyboard: true, unicodeKeyboard: true}, appium:deviceApiLevel: 34, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 480, appium:deviceScreenSize: 1344x2992, appium:deviceUDID: emulator-5554, appium:headless: true, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noSign: true, appium:pixelRatio: 3, appium:platformVersion: 14, appium:resetKeyboard: true, appium:statBarHeight: 151, appium:takesScreenshot: true, appium:unicodeKeyboard: true, appium:viewportRect: {height: 2841, left: 0, top: 151, width: 1344}, appium:warnings: {}, appium:webStorageEnabled: false, browserName: Chrome, platformName: ANDROID}
+Session ID: a4a2d602-3d90-4494-b8a6-a9171cf88781
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:629)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:675)
+	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:307)
+	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:325)
+	at io.appium.java_client.AppiumDriver.getScreenshotAs(AppiumDriver.java:316)
+	at steps.Hooks.saveScreenshot(Hooks.java:48)
+	at steps.Hooks.tearDown(Hooks.java:34)
+Caused by: java.io.UncheckedIOException: java.net.ConnectException
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:443)
+	at io.appium.java_client.internal.filters.AppiumIdempotencyFilter.lambda$apply$0(AppiumIdempotencyFilter.java:35)
+	at io.appium.java_client.internal.filters.AppiumUserAgentFilter.lambda$apply$0(AppiumUserAgentFilter.java:87)
+	at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:55)
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute(JdkHttpClient.java:359)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:188)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:238)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:675)
+	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:307)
+	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:325)
+	at io.appium.java_client.AppiumDriver.getScreenshotAs(AppiumDriver.java:316)
+	at steps.Hooks.saveScreenshot(Hooks.java:48)
+	at steps.Hooks.tearDown(Hooks.java:34)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at io.cucumber.java.Invoker.doInvoke(Invoker.java:66)
+	at io.cucumber.java.Invoker.invoke(Invoker.java:24)
+	at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)
+	at io.cucumber.java.JavaHookDefinition.execute(JavaHookDefinition.java:64)
+	at io.cucumber.core.runner.CoreHookDefinition.execute(CoreHookDefinition.java:46)
+	at io.cucumber.core.runner.HookDefinitionMatch.runStep(HookDefinitionMatch.java:21)
+	at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
+	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:84)
+	at io.cucumber.core.runner.TestStep.run(TestStep.java:56)
+	at io.cucumber.core.runner.TestCase.run(TestCase.java:90)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:75)
+	at io.cucumber.junit.PickleRunners$NoStepDescriptions.lambda$run$0(PickleRunners.java:151)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:130)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:130)
+	at io.cucumber.junit.PickleRunners$NoStepDescriptions.run(PickleRunners.java:148)
+	at io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:144)
+	at io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:28)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at io.cucumber.junit.FeatureRunner.run(FeatureRunner.java:137)
+	at io.cucumber.junit.Cucumber.runChild(Cucumber.java:196)
+	at io.cucumber.junit.Cucumber.runChild(Cucumber.java:89)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at io.cucumber.junit.Cucumber$RunBeforeAllHooks.evaluate(Cucumber.java:266)
+	at io.cucumber.junit.Cucumber$RunAfterAllHooks.evaluate(Cucumber.java:281)
+	at io.cucumber.junit.Cucumber$StartTestRun.evaluate(Cucumber.java:233)
+	at io.cucumber.junit.Cucumber$FinishTestRun.evaluate(Cucumber.java:248)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+Caused by: java.net.ConnectException
+	at java.net.http/jdk.internal.net.http.common.Utils.toConnectException(Utils.java:1041)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:227)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.checkRetryConnect(PlainHttpConnection.java:280)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$2(PlainHttpConnection.java:238)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934)
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1773)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.nio.channels.C
+
+# Created at 2025-02-17T14:50:02.691
+Unexpected IOException with stream: losedChannelException
+	at java.base/sun.nio.ch.SocketChannelImpl.ensureOpen(SocketChannelImpl.java:202)
+	at java.base/sun.nio.ch.SocketChannelImpl.beginConnect(SocketChannelImpl.java:786)
+	at java.base/sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:874)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$1(PlainHttpConnection.java:210)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:571)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:212)
+	... 9 more
+[0m
+
+
+# Created at 2025-02-17T14:50:02.694
+Unexpected IOException: 7,1,Realizar Compras de Produto #1,Tentar Realizar Login com Credenciais Incorretas(Realizar Compras de Produto #1),null,Error communicating with the remote browser. It may have died.\000ABuild info: version: '4.14.1'\002C revision: '03f8ede370'\000ASystem info: os.name: 'Windows 11'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '21.0.6'\000ADriver info: io.appium.java_client.android.AndroidDriver\000ACommand: [a4a2d602-3d90-4494-b8a6-a9171cf88781\002C get [url]]\000ACapabilities {appium:autoGrantPermissions: true\002C appium:automationName: UiAutomator2\002C appium:databaseEnabled: false\002C appium:desired: {appActivity: com.android.chrome/com.goog...\002C appPackage: com.android.chrome\002C autoGrantPermissions: true\002C automationName: UiAutomator2\002C browserName: Chrome\002C deviceName: emulator-5554\002C headless: true\002C noSign: true\002C platformName: ANDROID\002C platformVersion: 14\002C resetKeyboard: true\002C unicodeKeyboard: true}\002C appium:deviceApiLevel: 34\002C appium:deviceManufacturer: Google\002C appium:deviceModel: sdk_gphone64_x86_64\002C appium:deviceName: emulator-5554\002C appium:deviceScreenDensity: 480\002C appium:deviceScreenSize: 1344x2992\002C appium:deviceUDID: emulator-5554\002C appium:headless: true\002C appium:javascriptEnabled: true\002C appium:locationContextEnabled: false\002C appium:networkConnectionEnabled: true\002C appium:noSign: true\002C appium:pixelRatio: 3\002C appium:platformVersion: 14\002C appium:resetKeyboard: true\002C appium:statBarHeight: 151\002C appium:takesScreenshot: true\002C appium:unicodeKeyboard: true\002C appium:viewportRect: {height: 2841\002C left: 0\002C top: 151\002C width: 1344}\002C appium:warnings: {}\002C appium:webStorageEnabled: false\002C browserName: Chrome\002C platformName: ANDROID}\000ASession ID: a4a2d602-3d90-4494-b8a6-a9171cf88781,null,Error communicating with the remote browser. It may have died.\000ABuild info: version: '4.14.1'\002C revision: '03f8ede370'\000ASystem info: os.name: 'Windows 11'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '21.0.6'\000ADriver info: io.appium.java_client.android.AndroidDriver\000ACommand: [a4a2d602-3d90-4494-b8a6-a9171cf88781\002C get [url]]\000ACapabilities {appium:autoGrantPermissions: true\002C appium:automationName: UiAutomator2\002C appium:databaseEnabled: false\002C appium:desired: {appActivity: com.android.chrome/com.goog...\002C appPackage: com.android.chrome\002C autoGrantPermissions: true\002C automationName: UiAutomator2\002C browserName: Chrome\002C deviceName: emulator-5554\002C headless: true\002C noSign: true\002C platformName: ANDROID\002C platformVersion: 14\002C resetKeyboard: true\002C unicodeKeyboard: true}\002C appium:deviceApiLevel: 34\002C appium:deviceManufacturer: Google\002C appium:deviceModel: sdk_gphone64_x86_64\002C appium:deviceName: emulator-5554\002C appium:deviceScreenDensity: 480\002C appium:deviceScreenSize: 1344x2992\002C appium:deviceUDID: emulator-5554\002C appium:headless: true\002C appium:javascriptEnabled: true\002C appium:locationContextEnabled: false\002C appium:networkConnectionEnabled: true\002C appium:noSign: true\002C appium:pixelRatio: 3\002C appium:platformVersion: 14\002C appium:resetKeyboard: true\002C appium:statBarHeight: 151\002C appium:takesScreenshot: true\002C appium:unicodeKeyboard: true\002C appium:viewportRect: {height: 2841\002C left: 0\002C top: 151\002C width: 1344}\002C appium:warnings: {}\002C appium:webStorageEnabled: false\002C browserName: Chrome\002C platformName: ANDROID}\000ASession ID: a4a2d602-3d90-4494-b8a6-a9171cf88781,Error communicating with the remote browser. It may have died.\000ABuild info: version: '4.14.1'\002C revision: '03f8ede370'\000ASystem info: os.name: 'Windows 11'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '21.0.6'\000ADriver info: io.appium.java_client.android.AndroidDriver\000ACommand: [a4a2d602-3d90-4494-b8a6-a9171cf88781\002C get [url]]\000ACapabilities {appium:autoGrantPermissions: true\002C appium:automationName: UiAutomator2\002C appium:databaseEnabled: false\002C appium:desired: {appActivity: com.android.chrome/com.goog...\002C appPackage: com.android.chrome\002C autoGrantPermissions: true\002C automationName: UiAutomator2\002C browserName: Chrome\002C deviceName: emulator-5554\002C headless: true\002C noSign: true\002C platformName: ANDROID\002C platformVersion: 14\002C resetKeyboard: true\002C unicodeKeyboard: true}\002C appium:deviceApiLevel: 34\002C appium:deviceManufacturer: Google\002C appium:deviceModel: sdk_gphone64_x86_64\002C appium:deviceName: emulator-5554\002C appium:deviceScreenDensity: 480\002C appium:deviceScreenSize: 1344x2992\002C appium:deviceUDID: emulator-5554\002C appium:headless: true\002C appium:javascriptEnabled: true\002C appium:locationContextEnabled: false\002C appium:networkConnectionEnabled: true\002C appium:noSign: true\002C appium:pixelRatio: 3\002C appium:platformVersion: 14\002C appium:resetKeyboard: true\002C appium:statBarHeight: 151\002C appium:takesScreenshot: true\002C appium:unicodeKeyboard: true\002C appium:viewportRect: {height: 2841\002C left: 0\002C top: 151\002C width: 1344}\002C appium:warnings: {}\002C appium:webStorageEnabled: false\002C browserName: Chrome\002C platformName: ANDROID}\000ASession ID: a4a2d602-3d90-4494-b8a6-a9171cf88781,org.openqa.selenium.remote.UnreachableBrowserException: \000AError communicating with the remote browser. It may have died.\000ABuild info: version: '4.14.1'\002C revision: '03f8ede370'\000ASystem info: os.name: 'Windows 11'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '21.0.6'\000ADriver info: io.appium.java_client.android.AndroidDriver\000ACommand: [a4a2d602-3d90-4494-b8a6-a9171cf88781\002C get [url]]\000ACapabilities {appium:autoGrantPermissions: true\002C appium:automationName: UiAutomator2\002C appium:databaseEnabled: false\002C appium:desired: {appActivity: com.android.chrome/com.goog...\002C appPackage: com.android.chrome\002C autoGrantPermissions: true\002C automationName: UiAutomator2\002C browserName: Chrome\002C deviceName: emulator-5554\002C headless: true\002C noSign: true\002C platformName: ANDROID\002C platformVersion: 14\002C resetKeyboard: true\002C unicodeKeyboard: true}\002C appium:deviceApiLevel: 34\002C appium:deviceManufacturer: Google\002C appium:deviceModel: sdk_gphone64_x86_64\002C appium:deviceName: emulator-5554\002C appium:deviceScreenDensity: 480\002C appium:deviceScreenSize: 1344x2992\002C appium:deviceUDID: emulator-5554\002C appium:headless: true\002C appium:javascriptEnabled: true\002C appium:locationContextEnabled: false\002C appium:networkConnectionEnabled: true\002C appium:noSign: true\002C appium:pixelRatio: 3\002C appium:platformVersion: 14\002C appium:resetKeyboard: true\002C appium:statBarHeight: 151\002C appium:takesScreenshot: true\002C appium:unicodeKeyboard: true\002C appium:viewportRect: {height: 2841\002C left: 0\002C top: 151\002C width: 1344}\002C appium:warnings: {}\002C appium:webStorageEnabled: false\002C browserName: Chrome\002C platformName: ANDROID}\000ASession ID: a4a2d602-3d90-4494-b8a6-a9171cf88781\000ACaused by: java.io.UncheckedIOException: java.net.ConnectException\000ACaused by: java.net.ConnectException\000ACaused by: java.nio.channels.ClosedChannelException\000A
+
+
+# Created at 2025-02-17T14:50:02.695
+Unexpected IOException: 7,1,Realizar Compras de Produto #1,Tentar Realizar Login com Credenciais Incorretas(Realizar Compras de Produto #1),null,Error communicating with the remote browser. It may have died.\000ABuild info: version: '4.14.1'\002C revision: '03f8ede370'\000ASystem info: os.name: 'Windows 11'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '21.0.6'\000ADriver info: io.appium.java_client.android.AndroidDriver\000ACommand: [a4a2d602-3d90-4494-b8a6-a9171cf88781\002C screenshot []]\000ACapabilities {appium:autoGrantPermissions: true\002C appium:automationName: UiAutomator2\002C appium:databaseEnabled: false\002C appium:desired: {appActivity: com.android.chrome/com.goog...\002C appPackage: com.android.chrome\002C autoGrantPermissions: true\002C automationName: UiAutomator2\002C browserName: Chrome\002C deviceName: emulator-5554\002C headless: true\002C noSign: true\002C platformName: ANDROID\002C platformVersion: 14\002C resetKeyboard: true\002C unicodeKeyboard: true}\002C appium:deviceApiLevel: 34\002C appium:deviceManufacturer: Google\002C appium:deviceModel: sdk_gphone64_x86_64\002C appium:deviceName: emulator-5554\002C appium:deviceScreenDensity: 480\002C appium:deviceScreenSize: 1344x2992\002C appium:deviceUDID: emulator-5554\002C appium:headless: true\002C appium:javascriptEnabled: true\002C appium:locationContextEnabled: false\002C appium:networkConnectionEnabled: true\002C appium:noSign: true\002C appium:pixelRatio: 3\002C appium:platformVersion: 14\002C appium:resetKeyboard: true\002C appium:statBarHeight: 151\002C appium:takesScreenshot: true\002C appium:unicodeKeyboard: true\002C appium:viewportRect: {height: 2841\002C left: 0\002C top: 151\002C width: 1344}\002C appium:warnings: {}\002C appium:webStorageEnabled: false\002C browserName: Chrome\002C platformName: ANDROID}\000ASession ID: a4a2d602-3d90-4494-b8a6-a9171cf88781,null,Error communicating with the remote browser. It may have died.\000ABuild info: version: '4.14.1'\002C revision: '03f8ede370'\000ASystem info: os.name: 'Windows 11'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '21.0.6'\000ADriver info: io.appium.java_client.android.AndroidDriver\000ACommand: [a4a2d602-3d90-4494-b8a6-a9171cf88781\002C screenshot []]\000ACapabilities {appium:autoGrantPermissions: true\002C appium:automationName: UiAutomator2\002C appium:databaseEnabled: false\002C appium:desired: {appActivity: com.android.chrome/com.goog...\002C appPackage: com.android.chrome\002C autoGrantPermissions: true\002C automationName: UiAutomator2\002C browserName: Chrome\002C deviceName: emulator-5554\002C headless: true\002C noSign: true\002C platformName: ANDROID\002C platformVersion: 14\002C resetKeyboard: true\002C unicodeKeyboard: true}\002C appium:deviceApiLevel: 34\002C appium:deviceManufacturer: Google\002C appium:deviceModel: sdk_gphone64_x86_64\002C appium:deviceName: emulator-5554\002C appium:deviceScreenDensity: 480\002C appium:deviceScreenSize: 1344x2992\002C appium:deviceUDID: emulator-5554\002C appium:headless: true\002C appium:javascriptEnabled: true\002C appium:locationContextEnabled: false\002C appium:networkConnectionEnabled: true\002C appium:noSign: true\002C appium:pixelRatio: 3\002C appium:platformVersion: 14\002C appium:resetKeyboard: true\002C appium:statBarHeight: 151\002C appium:takesScreenshot: true\002C appium:unicodeKeyboard: true\002C appium:viewportRect: {height: 2841\002C left: 0\002C top: 151\002C width: 1344}\002C appium:warnings: {}\002C appium:webStorageEnabled: false\002C browserName: Chrome\002C platformName: ANDROID}\000ASession ID: a4a2d602-3d90-4494-b8a6-a9171cf88781,Error communicating with the remote browser. It may have died.\000ABuild info: version: '4.14.1'\002C revision: '03f8ede370'\000ASystem info: os.name: 'Windows 11'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '21.0.6'\000ADriver info: io.appium.java_client.android.AndroidDriver\000ACommand: [a4a2d602-3d90-4494-b8a6-a9171cf88781\002C screenshot []]\000ACapabilities {appium:autoGrantPermissions: true\002C appium:automationName: UiAutomator2\002C appium:databaseEnabled: false\002C appium:desired: {appActivity: com.android.chrome/com.goog...\002C appPackage: com.android.chrome\002C autoGrantPermissions: true\002C automationName: UiAutomator2\002C browserName: Chrome\002C deviceName: emulator-5554\002C headless: true\002C noSign: true\002C platformName: ANDROID\002C platformVersion: 14\002C resetKeyboard: true\002C unicodeKeyboard: true}\002C appium:deviceApiLevel: 34\002C appium:deviceManufacturer: Google\002C appium:deviceModel: sdk_gphone64_x86_64\002C appium:deviceName: emulator-5554\002C appium:deviceScreenDensity: 480\002C appium:deviceScreenSize: 1344x2992\002C appium:deviceUDID: emulator-5554\002C appium:headless: true\002C appium:javascriptEnabled: true\002C appium:locationContextEnabled: false\002C appium:networkConnectionEnabled: true\002C appium:noSign: true\002C appium:pixelRatio: 3\002C appium:platformVersion: 14\002C appium:resetKeyboard: true\002C appium:statBarHeight: 151\002C appium:takesScreenshot: true\002C appium:unicodeKeyboard: true\002C appium:viewportRect: {height: 2841\002C left: 0\002C top: 151\002C width: 1344}\002C appium:warnings: {}\002C appium:webStorageEnabled: false\002C browserName: Chrome\002C platformName: ANDROID}\000ASession ID: a4a2d602-3d90-4494-b8a6-a9171cf88781,org.openqa.selenium.remote.UnreachableBrowserException: \000AError communicating with the remote browser. It may have died.\000ABuild info: version: '4.14.1'\002C revision: '03f8ede370'\000ASystem info: os.name: 'Windows 11'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '21.0.6'\000ADriver info: io.appium.java_client.android.AndroidDriver\000ACommand: [a4a2d602-3d90-4494-b8a6-a9171cf88781\002C screenshot []]\000ACapabilities {appium:autoGrantPermissions: true\002C appium:automationName: UiAutomator2\002C appium:databaseEnabled: false\002C appium:desired: {appActivity: com.android.chrome/com.goog...\002C appPackage: com.android.chrome\002C autoGrantPermissions: true\002C automationName: UiAutomator2\002C browserName: Chrome\002C deviceName: emulator-5554\002C headless: true\002C noSign: true\002C platformName: ANDROID\002C platformVersion: 14\002C resetKeyboard: true\002C unicodeKeyboard: true}\002C appium:deviceApiLevel: 34\002C appium:deviceManufacturer: Google\002C appium:deviceModel: sdk_gphone64_x86_64\002C appium:deviceName: emulator-5554\002C appium:deviceScreenDensity: 480\002C appium:deviceScreenSize: 1344x2992\002C appium:deviceUDID: emulator-5554\002C appium:headless: true\002C appium:javascriptEnabled: true\002C appium:locationContextEnabled: false\002C appium:networkConnectionEnabled: true\002C appium:noSign: true\002C appium:pixelRatio: 3\002C appium:platformVersion: 14\002C appium:resetKeyboard: true\002C appium:statBarHeight: 151\002C appium:takesScreenshot: true\002C appium:unicodeKeyboard: true\002C appium:viewportRect: {height: 2841\002C left: 0\002C top: 151\002C width: 1344}\002C appium:warnings: {}\002C appium:webStorageEnabled: false\002C browserName: Chrome\002C platformName: ANDROID}\000ASession ID: a4a2d602-3d90-4494-b8a6-a9171cf88781\000ACaused by: java.io.UncheckedIOException: java.net.ConnectException\000ACaused by: java.net.ConnectException\000ACaused by: java.nio.channels.ClosedChannelException\000A
+
+
+# Created at 2025-02-17T14:50:02.705
+Unexpected IOException: 5,1,Realizar Compras de Produto #2,Comprar Produtos espec\00EDficos(Realizar Compras de Produto #2),null,null,null
+
+
+# Created at 2025-02-17T14:50:02.711
+Unexpected IOException with stream: 
+@Suite_Comprar_produtos @Comprar_produtos
+Cenario: Comprar Produtos específicos                               [90m# src/test/java/resources/features/002_ComprarProdutosSpec.feature:9[0m
+
+
+# Created at 2025-02-17T14:50:02.721
+Unexpected IOException with stream:       [31morg.openqa.selenium.remote.UnreachableBrowserException: Error communicating with the remote browser. It may have died.
+Build info: version: '4.14.1', revision: '03f8ede370'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.6'
+Driver info: io.appium.java_client.android.AndroidDriver
+Command: [a4a2d602-3d90-4494-b8a6-a9171cf88781, get [url]]
+Capabilities {appium:autoGrantPermissions: true, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.android.chrome/com.goog..., appPackage: com.android.chrome, autoGrantPermissions: true, automationName: UiAutomator2, browserName: Chrome, deviceName: emulator-5554, headless: true, noSign: true, platformName: ANDROID, platformVersion: 14, resetKeyboard: true, unicodeKeyboard: true}, appium:deviceApiLevel: 34, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 480, appium:deviceScreenSize: 1344x2992, appium:deviceUDID: emulator-5554, appium:headless: true, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noSign: true, appium:pixelRatio: 3, appium:platformVersion: 14, appium:resetKeyboard: true, appium:statBarHeight: 151, appium:takesScreenshot: true, appium:unicodeKeyboard: true, appium:viewportRect: {height: 2841, left: 0, top: 151, width: 1344}, appium:warnings: {}, appium:webStorageEnabled: false, browserName: Chrome, platformName: ANDROID}
+Session ID: a4a2d602-3d90-4494-b8a6-a9171cf88781
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:629)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:304)
+	at steps.Hooks.setUp(Hooks.java:23)
+Caused by: java.io.UncheckedIOException: java.net.ConnectException
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:443)
+	at io.appium.java_client.internal.filters.AppiumIdempotencyFilter.lambda$apply$0(AppiumIdempotencyFilter.java:35)
+	at io.appium.java_client.internal.filters.AppiumUserAgentFilter.lambda$apply$0(AppiumUserAgentFilter.java:87)
+	at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:55)
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute(JdkHttpClient.java:359)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:188)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:238)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:304)
+	at steps.Hooks.setUp(Hooks.java:23)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at io.cucumber.java.Invoker.doInvoke(Invoker.java:66)
+	at io.cucumber.java.Invoker.invoke(Invoker.java:24)
+	at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)
+	at io.cucumber.java.JavaHookDefinition.execute(JavaHookDefinition.java:64)
+	at io.cucumber.core.runner.CoreHookDefinition.execute(CoreHookDefinition.java:46)
+	at io.cucumber.core.runner.HookDefinitionMatch.runStep(HookDefinitionMatch.java:21)
+	at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
+	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:84)
+	at io.cucumber.core.runner.TestStep.run(TestStep.java:56)
+	at io.cucumber.core.runner.TestCase.run(TestCase.java:78)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:75)
+	at io.cucumber.junit.PickleRunners$NoStepDescriptions.lambda$run$0(PickleRunners.java:151)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:130)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:130)
+	at io.cucumber.junit.PickleRunners$NoStepDescriptions.run(PickleRunners.java:148)
+	at io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:144)
+	at io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:28)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at io.cucumber.junit.FeatureRunner.run(FeatureRunner.java:137)
+	at io.cucumber.junit.Cucumber.runChild(Cucumber.java:196)
+	at io.cucumber.junit.Cucumber.runChild(Cucumber.java:89)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at io.cucumber.junit.Cucumber$RunBeforeAllHooks.evaluate(Cucumber.java:266)
+	at io.cucumber.junit.Cucumber$RunAfterAllHooks.evaluate(Cucumber.java:281)
+	at io.cucumber.junit.Cucumber$StartTestRun.evaluate(Cucumber.java:233)
+	at io.cucumber.junit.Cucumber$FinishTestRun.evaluate(Cucumber.java:248)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+Caused by: java.net.ConnectException
+	at java.net.http/jdk.internal.net.http.common.Utils.toConnectException(Utils.java:1041)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:227)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.checkRetryConnect(PlainHttpConnection.java:280)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$2(PlainHttpConnection.java:238)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934)
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1773)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.nio.channels.ClosedChannelException
+	at java.base/sun.nio.ch.SocketChannelImpl.ensureOpen(SocketChannelImpl.java:202)
+	at java.base/sun.nio.ch.SocketChannelImpl.beginConnect(SocketChannelImpl.java:786)
+	at java.base/sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:874)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$1(PlainHttpConnection.java:210)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:571)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:212)
+	... 9 more
+[0m
+
+# Created at 2025-02-17T14:50:02.723
+Unexpected IOException with stream: 
+
+
+# Created at 2025-02-17T14:50:02.728
+Unexpected IOException with stream:   [36mDado [0m[36mque realizo o login[0m                                          [90m# steps.RealizarLoginStep.realizar_login()[0m
+
+
+# Created at 2025-02-17T14:50:02.730
+Unexpected IOException with stream:   [36mE [0m[36mverifico se o login foi realizado com sucesso[0m                   [90m# steps.RealizarLoginStep.verificar_login_sucesso()[0m
+
+
+# Created at 2025-02-17T14:50:02.731
+Unexpected IOException with stream:   [36mE [0m[36mRealizo a compra de [0m[36m[1m3[0m[36m Stylish Dresses[0m                           [90m# steps.ComprarProdutosStep.comprar_stylish_dress(int)[0m
+
+
+# Created at 2025-02-17T14:50:02.733
+Unexpected IOException with stream:   [36mE [0m[36mRealizo a compra de [0m[36m[1m2[0m[36m Beautiful Peacock Blue Cotton Linen Saree[0m [90m# steps.ComprarProdutosStep.comprar_beautiful_peacock(int)[0m
+
+
+# Created at 2025-02-17T14:50:02.734
+Unexpected IOException with stream:   [36mE [0m[36mRealizo a compra de [0m[36m[1m1[0m[36m Men Tshirt[0m                                [90m# steps.ComprarProdutosStep.comprar_men_tshirt(int)[0m
+
+
+# Created at 2025-02-17T14:50:02.735
+Unexpected IOException with stream:   [36mE [0m[36mVerifico se os itens foram adicionados corretamente no carrinho[0m [90m# steps.ComprarProdutosStep.ver_itens_carrinho()[0m
+
+
+# Created at 2025-02-17T14:50:02.736
+Unexpected IOException with stream:   [36mE [0m[36mRealizo o Pagamento[0m                                             [90m# steps.FinalizarComprasStep.realizar_pagamento()[0m
+
+
+# Created at 2025-02-17T14:50:02.738
+Unexpected IOException with stream:   [36mEntão [0m[36mVerifico se a compra foi realizada com sucesso[0m              [90m# steps.FinalizarComprasStep.verificar_compra_sucesso()[0m
+
+
+# Created at 2025-02-17T14:50:02.739
+Unexpected IOException with stream: O cenário 'Comprar Produtos específicos' - FALHOU!
+
+
+# Created at 2025-02-17T14:50:02.754
+Unexpected IOException with stream:       [31morg.openqa.selenium.remote.UnreachableBrowserException: Error communicating with the remote browser. It may have died.
+Build info: version: '4.14.1', revision: '03f8ede370'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.6'
+Driver info: io.appium.java_client.android.AndroidDriver
+Command: [a4a2d602-3d90-4494-b8a6-a9171cf88781, screenshot []]
+Capabilities {appium:autoGrantPermissions: true, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.android.chrome/com.goog..., appPackage: com.android.chrome, autoGrantPermissions: true, automationName: UiAutomator2, browserName: Chrome, deviceName: emulator-5554, headless: true, noSign: true, platformName: ANDROID, platformVersion: 14, resetKeyboard: true, unicodeKeyboard: true}, appium:deviceApiLevel: 34, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 480, appium:deviceScreenSize: 1344x2992, appium:deviceUDID: emulator-5554, appium:headless: true, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noSign: true, appium:pixelRatio: 3, appium:platformVersion: 14, appium:resetKeyboard: true, appium:statBarHeight: 151, appium:takesScreenshot: true, appium:unicodeKeyboard: true, appium:viewportRect: {height: 2841, left: 0, top: 151, width: 1344}, appium:warnings: {}, appium:webStorageEnabled: false, browserName: Chrome, platformName: ANDROID}
+Session ID: a4a2d602-3d90-4494-b8a6-a9171cf88781
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:629)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:675)
+	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:307)
+	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:325)
+	at io.appium.java_client.AppiumDriver.getScreenshotAs(AppiumDriver.java:316)
+	at steps.Hooks.saveScreenshot(Hooks.java:48)
+	at steps.Hooks.tearDown(Hooks.java:34)
+Caused by: java.io.UncheckedIOException: java.net.ConnectException
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:443)
+	at io.appium.java_client.internal.filters.AppiumIdempotencyFilter.lambda$apply$0(AppiumIdempotencyFilter.java:35)
+	at io.appium.java_client.internal.filters.AppiumUserAgentFilter.lambda$apply$0(AppiumUserAgentFilter.java:87)
+	at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:55)
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute(JdkHttpClient.java:359)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:188)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:238)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:675)
+	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:307)
+	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:325)
+	at io.appium.java_client.AppiumDriver.getScreenshotAs(AppiumDriver.java:316)
+	at steps.Hooks.saveScreenshot(Hooks.java:48)
+	at steps.Hooks.tearDown(Hooks.java:34)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at io.cucumber.java.Invoker.doInvoke(Invoker.java:66)
+	at io.cucumber.java.Invoker.invoke(Invoker.java:24)
+	at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)
+	at io.cucumber.java.JavaHookDefinition.execute(JavaHookDefinition.java:64)
+	at io.cucumber.core.runner.CoreHookDefinition.execute(CoreHookDefinition.java:46)
+	at io.cucumber.core.runner.HookDefinitionMatch.runStep(HookDefinitionMatch.java:21)
+	at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
+	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:84)
+	at io.cucumber.core.runner.TestStep.run(TestStep.java:56)
+	at io.cucumber.core.runner.TestCase.run(TestCase.java:90)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:75)
+	at io.cucumber.junit.PickleRunners$NoStepDescriptions.lambda$run$0(PickleRunners.java:151)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:130)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:130)
+	at io.cucumber.junit.PickleRunners$NoStepDescriptions.run(PickleRunners.java:148)
+	at io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:144)
+	at io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:28)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at io.cucumber.junit.FeatureRunner.run(FeatureRunner.java:137)
+	at io.cucumber.junit.Cucumber.runChild(Cucumber.java:196)
+	at io.cucumber.junit.Cucumber.runChild(Cucumber.java:89)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at io.cucumber.junit.Cucumber$RunBeforeAllHooks.evaluate(Cucumber.java:266)
+	at io.cucumber.junit.Cucumber$RunAfterAllHooks.evaluate(Cucumber.java:281)
+	at io.cucumber.junit.Cucumber$StartTestRun.evaluate(Cucumber.java:233)
+	at io.cucumber.junit.Cucumber$FinishTestRun.evaluate(Cucumber.java:248)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+Caused by: java.net.ConnectException
+	at java.net.http/jdk.internal.net.http.common.Utils.toConnectException(Utils.java:1041)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:227)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.checkRetryConnect(PlainHttpConnection.java:280)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$2(PlainHttpConnection.java:238)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934)
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1773)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.nio.channels.C
+
+# Created at 2025-02-17T14:50:02.755
+Unexpected IOException with stream: losedChannelException
+	at java.base/sun.nio.ch.SocketChannelImpl.ensureOpen(SocketChannelImpl.java:202)
+	at java.base/sun.nio.ch.SocketChannelImpl.beginConnect(SocketChannelImpl.java:786)
+	at java.base/sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:874)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$1(PlainHttpConnection.java:210)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:571)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:212)
+	... 9 more
+[0m
+
+
+# Created at 2025-02-17T14:50:02.759
+Unexpected IOException: 7,1,Realizar Compras de Produto #2,Comprar Produtos espec\00EDficos(Realizar Compras de Produto #2),null,Error communicating with the remote browser. It may have died.\000ABuild info: version: '4.14.1'\002C revision: '03f8ede370'\000ASystem info: os.name: 'Windows 11'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '21.0.6'\000ADriver info: io.appium.java_client.android.AndroidDriver\000ACommand: [a4a2d602-3d90-4494-b8a6-a9171cf88781\002C get [url]]\000ACapabilities {appium:autoGrantPermissions: true\002C appium:automationName: UiAutomator2\002C appium:databaseEnabled: false\002C appium:desired: {appActivity: com.android.chrome/com.goog...\002C appPackage: com.android.chrome\002C autoGrantPermissions: true\002C automationName: UiAutomator2\002C browserName: Chrome\002C deviceName: emulator-5554\002C headless: true\002C noSign: true\002C platformName: ANDROID\002C platformVersion: 14\002C resetKeyboard: true\002C unicodeKeyboard: true}\002C appium:deviceApiLevel: 34\002C appium:deviceManufacturer: Google\002C appium:deviceModel: sdk_gphone64_x86_64\002C appium:deviceName: emulator-5554\002C appium:deviceScreenDensity: 480\002C appium:deviceScreenSize: 1344x2992\002C appium:deviceUDID: emulator-5554\002C appium:headless: true\002C appium:javascriptEnabled: true\002C appium:locationContextEnabled: false\002C appium:networkConnectionEnabled: true\002C appium:noSign: true\002C appium:pixelRatio: 3\002C appium:platformVersion: 14\002C appium:resetKeyboard: true\002C appium:statBarHeight: 151\002C appium:takesScreenshot: true\002C appium:unicodeKeyboard: true\002C appium:viewportRect: {height: 2841\002C left: 0\002C top: 151\002C width: 1344}\002C appium:warnings: {}\002C appium:webStorageEnabled: false\002C browserName: Chrome\002C platformName: ANDROID}\000ASession ID: a4a2d602-3d90-4494-b8a6-a9171cf88781,null,Error communicating with the remote browser. It may have died.\000ABuild info: version: '4.14.1'\002C revision: '03f8ede370'\000ASystem info: os.name: 'Windows 11'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '21.0.6'\000ADriver info: io.appium.java_client.android.AndroidDriver\000ACommand: [a4a2d602-3d90-4494-b8a6-a9171cf88781\002C get [url]]\000ACapabilities {appium:autoGrantPermissions: true\002C appium:automationName: UiAutomator2\002C appium:databaseEnabled: false\002C appium:desired: {appActivity: com.android.chrome/com.goog...\002C appPackage: com.android.chrome\002C autoGrantPermissions: true\002C automationName: UiAutomator2\002C browserName: Chrome\002C deviceName: emulator-5554\002C headless: true\002C noSign: true\002C platformName: ANDROID\002C platformVersion: 14\002C resetKeyboard: true\002C unicodeKeyboard: true}\002C appium:deviceApiLevel: 34\002C appium:deviceManufacturer: Google\002C appium:deviceModel: sdk_gphone64_x86_64\002C appium:deviceName: emulator-5554\002C appium:deviceScreenDensity: 480\002C appium:deviceScreenSize: 1344x2992\002C appium:deviceUDID: emulator-5554\002C appium:headless: true\002C appium:javascriptEnabled: true\002C appium:locationContextEnabled: false\002C appium:networkConnectionEnabled: true\002C appium:noSign: true\002C appium:pixelRatio: 3\002C appium:platformVersion: 14\002C appium:resetKeyboard: true\002C appium:statBarHeight: 151\002C appium:takesScreenshot: true\002C appium:unicodeKeyboard: true\002C appium:viewportRect: {height: 2841\002C left: 0\002C top: 151\002C width: 1344}\002C appium:warnings: {}\002C appium:webStorageEnabled: false\002C browserName: Chrome\002C platformName: ANDROID}\000ASession ID: a4a2d602-3d90-4494-b8a6-a9171cf88781,Error communicating with the remote browser. It may have died.\000ABuild info: version: '4.14.1'\002C revision: '03f8ede370'\000ASystem info: os.name: 'Windows 11'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '21.0.6'\000ADriver info: io.appium.java_client.android.AndroidDriver\000ACommand: [a4a2d602-3d90-4494-b8a6-a9171cf88781\002C get [url]]\000ACapabilities {appium:autoGrantPermissions: true\002C appium:automationName: UiAutomator2\002C appium:databaseEnabled: false\002C appium:desired: {appActivity: com.android.chrome/com.goog...\002C appPackage: com.android.chrome\002C autoGrantPermissions: true\002C automationName: UiAutomator2\002C browserName: Chrome\002C deviceName: emulator-5554\002C headless: true\002C noSign: true\002C platformName: ANDROID\002C platformVersion: 14\002C resetKeyboard: true\002C unicodeKeyboard: true}\002C appium:deviceApiLevel: 34\002C appium:deviceManufacturer: Google\002C appium:deviceModel: sdk_gphone64_x86_64\002C appium:deviceName: emulator-5554\002C appium:deviceScreenDensity: 480\002C appium:deviceScreenSize: 1344x2992\002C appium:deviceUDID: emulator-5554\002C appium:headless: true\002C appium:javascriptEnabled: true\002C appium:locationContextEnabled: false\002C appium:networkConnectionEnabled: true\002C appium:noSign: true\002C appium:pixelRatio: 3\002C appium:platformVersion: 14\002C appium:resetKeyboard: true\002C appium:statBarHeight: 151\002C appium:takesScreenshot: true\002C appium:unicodeKeyboard: true\002C appium:viewportRect: {height: 2841\002C left: 0\002C top: 151\002C width: 1344}\002C appium:warnings: {}\002C appium:webStorageEnabled: false\002C browserName: Chrome\002C platformName: ANDROID}\000ASession ID: a4a2d602-3d90-4494-b8a6-a9171cf88781,org.openqa.selenium.remote.UnreachableBrowserException: \000AError communicating with the remote browser. It may have died.\000ABuild info: version: '4.14.1'\002C revision: '03f8ede370'\000ASystem info: os.name: 'Windows 11'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '21.0.6'\000ADriver info: io.appium.java_client.android.AndroidDriver\000ACommand: [a4a2d602-3d90-4494-b8a6-a9171cf88781\002C get [url]]\000ACapabilities {appium:autoGrantPermissions: true\002C appium:automationName: UiAutomator2\002C appium:databaseEnabled: false\002C appium:desired: {appActivity: com.android.chrome/com.goog...\002C appPackage: com.android.chrome\002C autoGrantPermissions: true\002C automationName: UiAutomator2\002C browserName: Chrome\002C deviceName: emulator-5554\002C headless: true\002C noSign: true\002C platformName: ANDROID\002C platformVersion: 14\002C resetKeyboard: true\002C unicodeKeyboard: true}\002C appium:deviceApiLevel: 34\002C appium:deviceManufacturer: Google\002C appium:deviceModel: sdk_gphone64_x86_64\002C appium:deviceName: emulator-5554\002C appium:deviceScreenDensity: 480\002C appium:deviceScreenSize: 1344x2992\002C appium:deviceUDID: emulator-5554\002C appium:headless: true\002C appium:javascriptEnabled: true\002C appium:locationContextEnabled: false\002C appium:networkConnectionEnabled: true\002C appium:noSign: true\002C appium:pixelRatio: 3\002C appium:platformVersion: 14\002C appium:resetKeyboard: true\002C appium:statBarHeight: 151\002C appium:takesScreenshot: true\002C appium:unicodeKeyboard: true\002C appium:viewportRect: {height: 2841\002C left: 0\002C top: 151\002C width: 1344}\002C appium:warnings: {}\002C appium:webStorageEnabled: false\002C browserName: Chrome\002C platformName: ANDROID}\000ASession ID: a4a2d602-3d90-4494-b8a6-a9171cf88781\000ACaused by: java.io.UncheckedIOException: java.net.ConnectException\000ACaused by: java.net.ConnectException\000ACaused by: java.nio.channels.ClosedChannelException\000A
+
+
+# Created at 2025-02-17T14:50:02.760
+Unexpected IOException: 7,1,Realizar Compras de Produto #2,Comprar Produtos espec\00EDficos(Realizar Compras de Produto #2),null,Error communicating with the remote browser. It may have died.\000ABuild info: version: '4.14.1'\002C revision: '03f8ede370'\000ASystem info: os.name: 'Windows 11'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '21.0.6'\000ADriver info: io.appium.java_client.android.AndroidDriver\000ACommand: [a4a2d602-3d90-4494-b8a6-a9171cf88781\002C screenshot []]\000ACapabilities {appium:autoGrantPermissions: true\002C appium:automationName: UiAutomator2\002C appium:databaseEnabled: false\002C appium:desired: {appActivity: com.android.chrome/com.goog...\002C appPackage: com.android.chrome\002C autoGrantPermissions: true\002C automationName: UiAutomator2\002C browserName: Chrome\002C deviceName: emulator-5554\002C headless: true\002C noSign: true\002C platformName: ANDROID\002C platformVersion: 14\002C resetKeyboard: true\002C unicodeKeyboard: true}\002C appium:deviceApiLevel: 34\002C appium:deviceManufacturer: Google\002C appium:deviceModel: sdk_gphone64_x86_64\002C appium:deviceName: emulator-5554\002C appium:deviceScreenDensity: 480\002C appium:deviceScreenSize: 1344x2992\002C appium:deviceUDID: emulator-5554\002C appium:headless: true\002C appium:javascriptEnabled: true\002C appium:locationContextEnabled: false\002C appium:networkConnectionEnabled: true\002C appium:noSign: true\002C appium:pixelRatio: 3\002C appium:platformVersion: 14\002C appium:resetKeyboard: true\002C appium:statBarHeight: 151\002C appium:takesScreenshot: true\002C appium:unicodeKeyboard: true\002C appium:viewportRect: {height: 2841\002C left: 0\002C top: 151\002C width: 1344}\002C appium:warnings: {}\002C appium:webStorageEnabled: false\002C browserName: Chrome\002C platformName: ANDROID}\000ASession ID: a4a2d602-3d90-4494-b8a6-a9171cf88781,null,Error communicating with the remote browser. It may have died.\000ABuild info: version: '4.14.1'\002C revision: '03f8ede370'\000ASystem info: os.name: 'Windows 11'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '21.0.6'\000ADriver info: io.appium.java_client.android.AndroidDriver\000ACommand: [a4a2d602-3d90-4494-b8a6-a9171cf88781\002C screenshot []]\000ACapabilities {appium:autoGrantPermissions: true\002C appium:automationName: UiAutomator2\002C appium:databaseEnabled: false\002C appium:desired: {appActivity: com.android.chrome/com.goog...\002C appPackage: com.android.chrome\002C autoGrantPermissions: true\002C automationName: UiAutomator2\002C browserName: Chrome\002C deviceName: emulator-5554\002C headless: true\002C noSign: true\002C platformName: ANDROID\002C platformVersion: 14\002C resetKeyboard: true\002C unicodeKeyboard: true}\002C appium:deviceApiLevel: 34\002C appium:deviceManufacturer: Google\002C appium:deviceModel: sdk_gphone64_x86_64\002C appium:deviceName: emulator-5554\002C appium:deviceScreenDensity: 480\002C appium:deviceScreenSize: 1344x2992\002C appium:deviceUDID: emulator-5554\002C appium:headless: true\002C appium:javascriptEnabled: true\002C appium:locationContextEnabled: false\002C appium:networkConnectionEnabled: true\002C appium:noSign: true\002C appium:pixelRatio: 3\002C appium:platformVersion: 14\002C appium:resetKeyboard: true\002C appium:statBarHeight: 151\002C appium:takesScreenshot: true\002C appium:unicodeKeyboard: true\002C appium:viewportRect: {height: 2841\002C left: 0\002C top: 151\002C width: 1344}\002C appium:warnings: {}\002C appium:webStorageEnabled: false\002C browserName: Chrome\002C platformName: ANDROID}\000ASession ID: a4a2d602-3d90-4494-b8a6-a9171cf88781,Error communicating with the remote browser. It may have died.\000ABuild info: version: '4.14.1'\002C revision: '03f8ede370'\000ASystem info: os.name: 'Windows 11'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '21.0.6'\000ADriver info: io.appium.java_client.android.AndroidDriver\000ACommand: [a4a2d602-3d90-4494-b8a6-a9171cf88781\002C screenshot []]\000ACapabilities {appium:autoGrantPermissions: true\002C appium:automationName: UiAutomator2\002C appium:databaseEnabled: false\002C appium:desired: {appActivity: com.android.chrome/com.goog...\002C appPackage: com.android.chrome\002C autoGrantPermissions: true\002C automationName: UiAutomator2\002C browserName: Chrome\002C deviceName: emulator-5554\002C headless: true\002C noSign: true\002C platformName: ANDROID\002C platformVersion: 14\002C resetKeyboard: true\002C unicodeKeyboard: true}\002C appium:deviceApiLevel: 34\002C appium:deviceManufacturer: Google\002C appium:deviceModel: sdk_gphone64_x86_64\002C appium:deviceName: emulator-5554\002C appium:deviceScreenDensity: 480\002C appium:deviceScreenSize: 1344x2992\002C appium:deviceUDID: emulator-5554\002C appium:headless: true\002C appium:javascriptEnabled: true\002C appium:locationContextEnabled: false\002C appium:networkConnectionEnabled: true\002C appium:noSign: true\002C appium:pixelRatio: 3\002C appium:platformVersion: 14\002C appium:resetKeyboard: true\002C appium:statBarHeight: 151\002C appium:takesScreenshot: true\002C appium:unicodeKeyboard: true\002C appium:viewportRect: {height: 2841\002C left: 0\002C top: 151\002C width: 1344}\002C appium:warnings: {}\002C appium:webStorageEnabled: false\002C browserName: Chrome\002C platformName: ANDROID}\000ASession ID: a4a2d602-3d90-4494-b8a6-a9171cf88781,org.openqa.selenium.remote.UnreachableBrowserException: \000AError communicating with the remote browser. It may have died.\000ABuild info: version: '4.14.1'\002C revision: '03f8ede370'\000ASystem info: os.name: 'Windows 11'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '21.0.6'\000ADriver info: io.appium.java_client.android.AndroidDriver\000ACommand: [a4a2d602-3d90-4494-b8a6-a9171cf88781\002C screenshot []]\000ACapabilities {appium:autoGrantPermissions: true\002C appium:automationName: UiAutomator2\002C appium:databaseEnabled: false\002C appium:desired: {appActivity: com.android.chrome/com.goog...\002C appPackage: com.android.chrome\002C autoGrantPermissions: true\002C automationName: UiAutomator2\002C browserName: Chrome\002C deviceName: emulator-5554\002C headless: true\002C noSign: true\002C platformName: ANDROID\002C platformVersion: 14\002C resetKeyboard: true\002C unicodeKeyboard: true}\002C appium:deviceApiLevel: 34\002C appium:deviceManufacturer: Google\002C appium:deviceModel: sdk_gphone64_x86_64\002C appium:deviceName: emulator-5554\002C appium:deviceScreenDensity: 480\002C appium:deviceScreenSize: 1344x2992\002C appium:deviceUDID: emulator-5554\002C appium:headless: true\002C appium:javascriptEnabled: true\002C appium:locationContextEnabled: false\002C appium:networkConnectionEnabled: true\002C appium:noSign: true\002C appium:pixelRatio: 3\002C appium:platformVersion: 14\002C appium:resetKeyboard: true\002C appium:statBarHeight: 151\002C appium:takesScreenshot: true\002C appium:unicodeKeyboard: true\002C appium:viewportRect: {height: 2841\002C left: 0\002C top: 151\002C width: 1344}\002C appium:warnings: {}\002C appium:webStorageEnabled: false\002C browserName: Chrome\002C platformName: ANDROID}\000ASession ID: a4a2d602-3d90-4494-b8a6-a9171cf88781\000ACaused by: java.io.UncheckedIOException: java.net.ConnectException\000ACaused by: java.net.ConnectException\000ACaused by: java.nio.channels.ClosedChannelException\000A
+
+
+# Created at 2025-02-17T14:50:02.792
+Unexpected IOException with stream: [32m[1m┌───────────────────────────────────────────────────────────────────────────────────┐[0m
+[32m[1m│[0m Share your Cucumber Report with your team at [36m[1m[4mhttps://reports.cucumber.io[0m          [32m[1m│[0m
+[32m[1m│[0m Activate publishing with one of the following:                                    [32m[1m│[0m
+[32m[1m│[0m                                                                                   [32m[1m│[0m
+[32m[1m│[0m src/test/resources/cucumber.properties:          [36mcucumber.publish.enabled[0m=[36mtrue[0m    [32m[1m│[0m
+[32m[1m│[0m src/test/resources/junit-platform.properties:    [36mcucumber.publish.enabled[0m=[36mtrue[0m    [32m[1m│[0m
+[32m[1m│[0m Environment variable:                            [36mCUCUMBER_PUBLISH_ENABLED[0m=[36mtrue[0m    [32m[1m│[0m
+[32m[1m│[0m JUnit:                                           [36m@CucumberOptions[0m(publish = [36mtrue[0m) [32m[1m│[0m
+[32m[1m│[0m                                                                                   [32m[1m│[0m
+[32m[1m│[0m More information at [36mhttps://cucumber.io/docs/cucumber/environment-variables/[0m      [32m[1m│[0m
+[32m[1m│[0m                                                                                   [32m[1m│[0m
+[32m[1m│[0m Disable this message with one of the following:                                   [32m[1m│[0m
+[32m[1m│[0m                                                                                   [32m[1m│[0m
+[32m[1m│[0m src/test/resources/cucumber.properties:          [36mcucumber.publish.quiet[0m=[36mtrue[0m      [32m[1m│[0m
+[32m[1m│[0m src/test/resources/junit-platform.properties:    [36mcucumber.publish.quiet[0m=[36mtrue[0m      [32m[1m│[0m
+[32m[1m└───────────────────────────────────────────────────────────────────────────────────┘[0m
+
+
+# Created at 2025-02-17T14:50:02.793
+Unexpected IOException: 2,1,org.apache.maven.surefire.junit4.JUnit4Provider,runners.TestRunner,null,null,null
+
+
